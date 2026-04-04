@@ -37,6 +37,7 @@ This is a work in progress 🚀
 ## 🗺️ The Curriculum — 21 Modules
 - Every module answers one question: "What was missing from the last one?" That chain is what makes this a complete system — not a collection of tutorials.
 
-|Module|Topic|Track|Status|
-|--------------------------|
-|M00|Text → Numbers → Transformers → GPT|Foundation|✅|
+| Header 1 | Header 2 |
+| -------- | -------- |
+| Cell 1   | Cell 2   |
+| Cell 3   | Cell 4   |
