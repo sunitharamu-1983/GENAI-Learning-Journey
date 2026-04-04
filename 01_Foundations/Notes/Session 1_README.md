@@ -1,4 +1,4 @@
-# Generative AI Course Overview
+# Session 1 - Apr 4, 2026
 
 ## Executive Summary
 This learning pack introduces the core concepts and industry context of **Generative AI (GenAI)**. You will learn key definitions (Generative AI, LLM, SLM, RAG, AI agents), see how organizations are adopting AI (market growth, enterprise usage, productivity gains), and understand the instructor’s advice on using AI responsibly (avoiding lazy thinking). We cover role-specific uses (developers, analysts, designers, etc.), discuss the difference between using existing AI tools and building your own AI systems, and emphasize the importance of continuous upskilling.
