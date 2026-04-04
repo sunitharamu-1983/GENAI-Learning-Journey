@@ -16,4 +16,7 @@ This learning pack introduces the core concepts and industry context of **Genera
 
 | Feature / Model |	LLM (Large) |	SLM (Small) |	RAG (Retrieval-based) |	AI Agent (Autonomous) |
 | --- | --- | --- | --- | --- |
-| Definition | Huge language model (GPT, Claude) generates text. | Compact language model for local use. | LLM + document lookup to ground answers. | AI system that plans & executes multi-step tasks. |
+| **Definition** | Huge language model (GPT, Claude) generates text. | Compact language model for local use. | LLM + document lookup to ground answers. | AI system that plans & executes multi-step tasks. |
+| **Scale** | Cloud-scale (billions of parameters). | Lightweight (millions–hundreds millions). | LLM + external vector DB/knowledge base. | LLM + tools + memory (often needs good compute). |
+| **Speed** | Slower per query (heavy compute). | Faster and offline (on-device). | Depends on retrieval; adds overhead. | Slower due to planning; can be parallel. |
+| **Cost** | High (API usage or GPU). | Low (runs on local hardware). | Medium (LLM API + search costs). | High (multiple components & compute). |
