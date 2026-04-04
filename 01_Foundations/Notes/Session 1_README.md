@@ -42,3 +42,17 @@ GenAI tools are reshaping every role. Here’s how:
 - **Sales & Marketing:** AI can generate marketing copy, ad campaigns, and personalization at scale. For example, writing email drafts or social media content with AI, then iterating based on customer feedback. AI can also analyze market trends or customer data to inform strategy.
 
 ***Instructor’s note: Emphasize that domain expertise remains crucial. AI won’t replace your experience; instead, use AI to automate tedious tasks and amplify what you do best.)***
+
+## Building vs. Using AI Tools
+
+- **Using Tools:** Today many AI tools are plug-and-play (e.g. Copilot for coding, ChatGPT for Q&A, DALL·E for images). Non-technical users can simply prompt these tools. However, this course is not about just using off-the-shelf tools. It’s about building your own AI solutions.
+Building Custom Agents: Think of AI as a technology platform: developers aren’t just consumers, they are creators. We learn to build agentic systems from scratch – combining models, data pipelines, and software – rather than only relying on third-party apps. For example, instead of using a generic chatbot, you might create a specialized chatbot or assistant integrated with your company’s data and workflows.
+- **Why Build It:** Custom solutions let you control data privacy, ensure quality (reduce hallucination), and tailor functionality. If a new AI tool emerges with better features, you apply the same underlying knowledge (model architectures, vectors, prompts) to integrate it quickly. In short: Master how AI tools work, so you can pick or build the best one.
+- **Tools to Learn:** Key frameworks include LangChain, LlamaIndex, and toolkits for agents (AutoGen, OpenAI Functions). Even if you prototype with a tool, understanding the code and structure (APIs, embeddings, memory) is the goal.
+
+## Upskilling and Continued Learning
+- **Never Stop Learning:** AI advances daily. A course or book is outdated in months. Commit to continuous learning: read AI news, try new tools, take online courses. In fact, GenAI course enrollments have surged (~+195% year over year) as professionals race to reskill. The message: you must upskill continuously to stay relevant.
+- **Embrace (Don’t Fight) AI Tools:** By 2026, analysts predict ~80% of enterprise software will incorporate AI. That means most tools you use will have built-in AI features. Don’t resist this change. Instead, learn to drive the AI car, not sit in the trunk. Learn basic prompt-engineering and how to use AI assistively.
+- **Think in “Agentic” Terms:** Start thinking of problems as tasks that an AI agent could help solve. For example, instead of manual monthly report creation, imagine an AI agent that gathers data, generates the report, and emails it. This mindset shift helps spot automation opportunities.
+- **Good Input = Good Output:** A famous insight: “The quality of AI’s output is only as good as your input (prompt).” Practice writing clear, precise prompts. Use examples in your prompts, specify format, and iterate to improve results.
+- **Leadership Mindset:** Even seasoned professionals (10+ years experience) must adapt. Your hard-earned expertise becomes a superpower: you can design AI solutions that address real industry problems you know intimately. For instance, as a veteran project manager, you understand risk factors; use that knowledge to train or instruct your AI tools appropriately. Remember: AI augments your expertise, it doesn’t erase it.
