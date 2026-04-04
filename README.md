@@ -37,8 +37,8 @@ This is a work in progress 🚀
 ## 🗺️ The Curriculum — 21 Modules
 - Every module answers one question: "What was missing from the last one?" That chain is what makes this a complete system — not a collection of tutorials.
 
-| Module | :Topic | Track | Status | 
-| :--------: | :-------- | :--------: | :--------: |
+| Module | Topic | Track | Status | 
+| :--------: | :--------: | :--------: | :--------: |
 | M00 | Text → Numbers → Transformers → GPT | Foundation | ✅ |
 | M01 | Modern LLM Fundamentals (Tokenization, Embeddings, API) | Foundation | ✅ |
 | M02 | Local LLMs with Ollama | Foundation | ✅ |
