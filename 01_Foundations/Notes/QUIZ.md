@@ -1,4 +1,4 @@
-# Quiz (5 Questions)
+# Quiz (5 Questions) - Session 1
 
 1. Define Generative AI and give an example use case.
 2. What is the difference between an LLM and an SLM?

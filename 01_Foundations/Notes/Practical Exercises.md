@@ -1,4 +1,4 @@
-## Practical Exercises
+## Practical Exercises - Session 1
 
 1. **Build a Simple RAG Chatbot:**  
    - *Step 1:* Choose a topic (e.g. company FAQs or a Wikipedia article). Copy some source text (a PDF or webpage) into a document.  
