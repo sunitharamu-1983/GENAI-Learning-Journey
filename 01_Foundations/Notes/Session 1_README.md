@@ -41,7 +41,7 @@ GenAI tools are reshaping every role. Here’s how:
 - **Project Manager:** Even managers benefit: AI can help plan timelines, estimate resources, or summarize project proposals. But managers must understand AI enough to direct it: know what’s important for stakeholders (cost vs performance vs scale), ask the right questions about AI feasibility, and ensure teams use AI effectively.
 - **Sales & Marketing:** AI can generate marketing copy, ad campaigns, and personalization at scale. For example, writing email drafts or social media content with AI, then iterating based on customer feedback. AI can also analyze market trends or customer data to inform strategy.
 
-***Instructor’s note: Emphasize that domain expertise remains crucial. AI won’t replace your experience; instead, use AI to automate tedious tasks and amplify what you do best.)***
+***Instructor’s note: Emphasize that domain expertise remains crucial. AI won’t replace your experience; instead, use AI to automate tedious tasks and amplify what you do best.***
 
 ## Building vs. Using AI Tools
 
