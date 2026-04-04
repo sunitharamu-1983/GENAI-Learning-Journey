@@ -37,7 +37,26 @@ This is a work in progress 🚀
 ## 🗺️ The Curriculum — 21 Modules
 - Every module answers one question: "What was missing from the last one?" That chain is what makes this a complete system — not a collection of tutorials.
 
-| Header 1 | Header 2 |
-| -------- | -------- |
-| Cell 1   | Cell 2   |
-| Cell 3   | Cell 4   |
+| Module | Topic | Track | Status | 
+| :--------: | :-------- | :--------: | :--------: |
+| M00 | Text → Numbers → Transformers → GPT | Foundation | ✅ |
+| M01 | Modern LLM Fundamentals (Tokenization, Embeddings, API) | Foundation | ✅ |
+| M02 | Local LLMs with Ollama | Foundation | ✅ |
+| M03 | Prompt Engineering | Core | ✅ |
+| M04 | Memory & Chatbots | Core | ✅ |
+| M05 | RAG Basics | Core | ✅ |
+| M06 | Production RAG (Hybrid Search, Reranking, RAGAS) | Core | ✅ |
+| M07 | LangChain Agents | Agents | ✅ |
+| M08 | LangGraph (Stateful Agents) | Agents | ✅ |
+| M09 | CrewAI (Multi-Agent Teams) | Agents | ✅ |
+| M10 | MCP (Model Context Protocol) | Agents | ✅ |
+| M11 | Document Intelligence | Domain | ✅ |
+| M12 | Code Intelligence | Domain | ✅ |
+| M13 | Multimodal AI | Domain | ✅ |
+| M14 | AI Research Assistant | Domain | 🔜 |
+| M15 | FastAPI + Docker Deployment | Production | 🔜 |
+| M16 | LLMOps & Evaluation | Production | 🔜 |
+| M17 | Guardrails & AI Safety | Production | 🔜 |
+| M18 | Fine-Tuning with LoRA/QLoRA | Advanced | 🔜 |
+| M19 | LlamaIndex Knowledge System | Advanced | 🔜 |
+| M20 | Capstone: End-to-End Business AI System | Capstone | 🔜 |
