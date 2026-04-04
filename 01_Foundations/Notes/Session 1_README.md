@@ -1,9 +1,9 @@
 # Generative AI Course Overview
 
 ## Executive Summary
-This learning pack introduces the core concepts and industry context of Generative AI (GenAI). You will learn key definitions (Generative AI, LLM, SLM, RAG, AI agents), see how organizations are adopting AI (market growth, enterprise usage, productivity gains), and understand the instructor’s advice on using AI responsibly (avoiding lazy thinking). We cover role-specific uses (developers, analysts, designers, etc.), discuss the difference between using existing AI tools and building your own AI systems, and emphasize the importance of continuous upskilling.
+This learning pack introduces the core concepts and industry context of **Generative AI (GenAI)**. You will learn key definitions (Generative AI, LLM, SLM, RAG, AI agents), see how organizations are adopting AI (market growth, enterprise usage, productivity gains), and understand the instructor’s advice on using AI responsibly (avoiding lazy thinking). We cover role-specific uses (developers, analysts, designers, etc.), discuss the difference between using existing AI tools and building your own AI systems, and emphasize the importance of continuous upskilling.
 
-LLMs (Large Language Models) power GenAI tools like ChatGPT, but smaller SLMs (Small LMs) enable on-device use. RAG (Retrieval-Augmented Generation) systems ground AI in real data to reduce errors. AI Agents can plan and execute multi-step tasks with tools. The course stresses that AI should assist, not replace, your thinking. We include an overview table comparing LLM/SLM/RAG/Agent, a short quiz, practical exercises, and next-step guidance. By the end, you’ll know how to apply GenAI thoughtfully in your role and prepare for AI’s ongoing impact.
+**LLMs (Large Language Models)** power GenAI tools like ChatGPT, but smaller SLMs (Small LMs) enable on-device use. RAG (Retrieval-Augmented Generation) systems ground AI in real data to reduce errors. AI Agents can plan and execute multi-step tasks with tools. The course stresses that AI should assist, not replace, your thinking. We include an overview table comparing LLM/SLM/RAG/Agent, a short quiz, practical exercises, and next-step guidance. By the end, you’ll know how to apply GenAI thoughtfully in your role and prepare for AI’s ongoing impact.
 
 ## Key Concepts & Definitions
 - **Generative AI (GenAI):** AI that creates new content (text, code, images, audio, video) from a prompt. Examples: ChatGPT, DALL·E, GitHub Copilot. It generates answers rather than retrieving fixed responses.
@@ -11,3 +11,9 @@ LLMs (Large Language Models) power GenAI tools like ChatGPT, but smaller SLMs (S
 - **Small Language Model (SLM):** A compact language model that can run on devices (phones, laptops) locally. SLMs use fewer resources and can answer simpler queries faster. They’re ideal for on-device AI where LLMs are too large or costly.
 - **Retrieval-Augmented Generation (RAG):** A hybrid AI approach that combines your data with an LLM. The system first retrieves relevant documents from a knowledge base (e.g. company docs, manuals) and then generates an answer grounded in that data. RAG reduces errors and hallucinations by “giving the AI a cheat sheet” of trusted information.
 - **AI Agents (Autonomous Agents):** AI systems that can plan, reason, and act on multi-step tasks by using tools. Agents go beyond single-response chatbots: they can execute code, query databases, call APIs, and adapt their strategy. Think of them as a capable digital assistant that follows through on complex goals (e.g. “build a prototype app end to end”).
+
+## Comparison Table: (features of each class of AI system)
+
+| Feature / Model |	LLM (Large) |	SLM (Small) |	RAG (Retrieval-based) |	AI Agent (Autonomous) |
+| --- | --- | --- | --- | --- |
+| Definition | Huge language model (GPT, Claude) generates text. | Compact language model for local use. | LLM + document lookup to ground answers. | AI system that plans & executes multi-step tasks. |
