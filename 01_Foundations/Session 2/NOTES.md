@@ -43,6 +43,10 @@ The instructor demonstrated how to set up and use Google Colaboratory, including
 ## Limitation of TF-IDF
    - It doesn't understand context or meaning - only word occurrence. This led to discussion of why modern search engines use more advanced techniques like embeddings for semantic understanding.
    - The instructor demonstrated all concepts with practical coding examples using a 10-document dataset about pizza recipes.
+   - **Context and Meaning:** TF-IDF only considers word occurrence frequency in documents and across the corpus, but does not understand the meaning or context of what the user is searching for. For example, when searching for "automobile," it would rank a document containing that exact word higher, but miss relevant documents about "car racing" or "vehicle maintenance" that are contextually related.
+   - **Word Order:** TF-IDF does not consider the order of words in a sentence. For example, "dog bites the man" and "man bites the dog" have completely different meanings, but TF-IDF would give them the same score since they contain the same words.
+   - **Stop Words Problem:** Removing stop words (like "NOT") during preprocessing can change the meaning of sentences significantly, which is problematic when context matters. The instructor mentioned that with modern embedding techniques, stop words are no longer removed.
+   - **Out of Vocabulary (OOV):** If a word doesn't exist in the inverted index, TF-IDF returns nothing. For example, if the documents are about pizza but someone searches for "cricket" or uses a misspelling like "TIST" instead of "pizza," the system won't find any results even if similar content exists.
 
 ## TF-IDF Detailed Explanation
 Based on the meeting transcript, here is Noor's detailed explanation of TF (Term Frequency) and IDF (Inverse Document Frequency):
@@ -57,3 +61,6 @@ IDF considers the word across the entire corpus (all documents). The formula is:
 You multiply TF × IDF for each word in each document. When TF-IDF is high, it means the word appears often in this particular document AND is rare globally - making it very relevant. For a search query with multiple words, you calculate TF-IDF for each word, add them together for each document, then sort by the highest scores to rank the search results.
 
 Noor also mentioned that sometimes the formula uses log(1 + N/n) instead of just log(N/n) - this is called "smooth IDF" to avoid getting zero when a word appears in all documents (since log(1) = 0).
+
+## Modern Approach
+The instructor emphasized that TF-IDF is a legacy technique. Modern search engines use embeddings and transformers that understand context, word order, and semantic meaning without requiring preprocessing like stop word removal or stemming. These newer techniques will be covered in upcoming classes.
