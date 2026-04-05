@@ -1,7 +1,7 @@
-## **Session 2 - Apr 5, 2026**
+# **Session 2 - Apr 5, 2026**
 Early State NLP and Basic Legendary search engine explanation is provided below
 
-# NLP Pipeline (Search Engine Example): 
+## NLP Pipeline (Search Engine Example): 
 *The instructor used a search engine to illustrate NLP steps:*
 
   - **Crawling:** Bots scan web pages. (**Data Collection**) 
@@ -18,10 +18,10 @@ Early State NLP and Basic Legendary search engine explanation is provided below
     - ***TF & IDF*** - Combined gives the importance score that is how frequent and how rare
   - **Semantics:** Meaning Matching
 
-# Google Colab Setup: 
+## Google Colab Setup: 
 The instructor demonstrated how to set up and use Google Colaboratory, including connecting to Google Drive, accessing GPU resources, and the free tier limitations (12.7 GB RAM, 107 GB disk space).
 
-# NLP Pipeline Implementation
+## NLP Pipeline Implementation
 *The class walked through building a search engine step-by-step:*
 
   -  **Parsing:** Using BeautifulSoup to extract text from HTML pages
@@ -40,4 +40,5 @@ The instructor demonstrated how to set up and use Google Colaboratory, including
       - Multiplying these scores to find the most relevant results
       - The instructor is using a sample dataset of 10 documents about pizza recipes to demonstrate these concepts with live coding examples.
    
-  **Drawback:** TF & IDF Scoring only spoke about occurences, but now - we need to understand the context and meaning. That is where the NLP evolved. 
+  ## Drawback 
+  TF & IDF Scoring only spoke about occurences, but now - we need to understand the context and meaning. That is where the NLP evolved. 
