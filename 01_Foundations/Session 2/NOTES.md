@@ -20,7 +20,9 @@
 # Google Colab Setup: 
 The instructor demonstrated how to set up and use Google Colaboratory, including connecting to Google Drive, accessing GPU resources, and the free tier limitations (12.7 GB RAM, 107 GB disk space).
 
-- **NLP Pipeline Implementation:** The class walked through building a search engine step-by-step:
+- **NLP Pipeline Implementation:**
+*The class walked through building a search engine step-by-step:*
+
   -  **Parsing:** Using BeautifulSoup to extract text from HTML pages
   -  **Tokenization:** Converting text to lowercase and splitting into individual words
   -  **Stop Words Removal:** Using NLTK library to remove common English words (179 stop words)
@@ -30,3 +32,9 @@ The instructor demonstrated how to set up and use Google Colaboratory, including
   -  **Term Frequency:** How often a word appears in a document divided by total words in that document
   -  **Inverse Document Frequency:** Measures how rare or common a word is across all documents
       -  ***The combination helps identify relevant documents for search queries***
+  
+  - **TF-IDF Scoring:** Currently explaining Term Frequency-Inverse Document Frequency, which ranks documents by:
+      - How often a word appears in a specific document (TF)
+      - How rare that word is across all documents (IDF)
+      - Multiplying these scores to find the most relevant results
+      - The instructor is using a sample dataset of 10 documents about pizza recipes to demonstrate these concepts with live coding examples.
