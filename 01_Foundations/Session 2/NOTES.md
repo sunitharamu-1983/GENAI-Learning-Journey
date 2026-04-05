@@ -20,7 +20,7 @@
 # Google Colab Setup: 
 The instructor demonstrated how to set up and use Google Colaboratory, including connecting to Google Drive, accessing GPU resources, and the free tier limitations (12.7 GB RAM, 107 GB disk space).
 
-- **NLP Pipeline Implementation:**
+# NLP Pipeline Implementation
 *The class walked through building a search engine step-by-step:*
 
   -  **Parsing:** Using BeautifulSoup to extract text from HTML pages
