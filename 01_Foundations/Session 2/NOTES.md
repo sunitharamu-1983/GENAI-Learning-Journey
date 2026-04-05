@@ -1,4 +1,5 @@
 ## **Session 2 - Apr 5, 2026**
+Early State NLP and Basic Legendary search engine explanation is provided below
 
 # NLP Pipeline (Search Engine Example): 
 *The instructor used a search engine to illustrate NLP steps:*
@@ -38,3 +39,5 @@ The instructor demonstrated how to set up and use Google Colaboratory, including
       - How rare that word is across all documents (IDF)
       - Multiplying these scores to find the most relevant results
       - The instructor is using a sample dataset of 10 documents about pizza recipes to demonstrate these concepts with live coding examples.
+   
+  **Drawback:** TF & IDF Scoring only spoke about occurences, but now - we need to understand the context and meaning. That is where the NLP evolved. 
