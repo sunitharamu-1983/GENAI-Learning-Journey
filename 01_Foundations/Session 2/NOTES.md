@@ -29,5 +29,4 @@ The instructor demonstrated how to set up and use Google Colaboratory, including
   -  **TF-IDF Explanation:** The instructor is currently explaining Term Frequency-Inverse Document Frequency (TF-IDF) scoring:
   -  **Term Frequency:** How often a word appears in a document divided by total words in that document
   -  **Inverse Document Frequency:** Measures how rare or common a word is across all documents
-    -  ***The combination helps identify relevant documents for search queries***
-The session includes live coding demonstrations using Python with practical examples using pizza recipe documents.
+      -  ***The combination helps identify relevant documents for search queries***
