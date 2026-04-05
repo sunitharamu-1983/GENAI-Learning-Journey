@@ -1,6 +1,6 @@
-## Session 2 - Apr 5, 2026
+## **Session 2 - Apr 5, 2026**
 
-# **NLP Pipeline (Search Engine Example):** 
+# NLP Pipeline (Search Engine Example): 
 *The instructor used a search engine to illustrate NLP steps:*
 
   - **Crawling:** Bots scan web pages.  
