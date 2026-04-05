@@ -39,6 +39,9 @@ The instructor demonstrated how to set up and use Google Colaboratory, including
       - How rare that word is across all documents (IDF)
       - Multiplying these scores to find the most relevant results
       - The instructor is using a sample dataset of 10 documents about pizza recipes to demonstrate these concepts with live coding examples.
+
+## Insight
+***Lemmatization is preferred when meaning matters (like search engines), while stemming is useful for speed***
    
 ## Limitation of TF-IDF
    - It doesn't understand context or meaning - only word occurrence. This led to discussion of why modern search engines use more advanced techniques like embeddings for semantic understanding.
