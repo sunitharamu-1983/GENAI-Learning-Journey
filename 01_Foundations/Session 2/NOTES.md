@@ -40,5 +40,6 @@ The instructor demonstrated how to set up and use Google Colaboratory, including
       - Multiplying these scores to find the most relevant results
       - The instructor is using a sample dataset of 10 documents about pizza recipes to demonstrate these concepts with live coding examples.
    
-  ## Drawback 
-  TF & IDF Scoring only spoke about occurences, but now - we need to understand the context and meaning. That is where the NLP evolved. 
+  ## Limitation of TF-IDF
+   - It doesn't understand context or meaning - only word occurrence. This led to discussion of why modern search engines use more advanced techniques like embeddings for semantic understanding.
+   - The instructor demonstrated all concepts with practical coding examples using a 10-document dataset about pizza recipes.
