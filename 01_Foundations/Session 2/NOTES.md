@@ -16,3 +16,18 @@
     - ***IDF:*** - Inverse Document Frequency - How rare a word is across all the documents
     - ***TF & IDF*** - Combined gives the importance score that is how frequent and how rare
   - **Semantics:** Meaning Matching
+
+# Google Colab Setup: 
+The instructor demonstrated how to set up and use Google Colaboratory, including connecting to Google Drive, accessing GPU resources, and the free tier limitations (12.7 GB RAM, 107 GB disk space).
+
+- **NLP Pipeline Implementation:** The class walked through building a search engine step-by-step:
+  -  **Parsing:** Using BeautifulSoup to extract text from HTML pages
+  -  **Tokenization:** Converting text to lowercase and splitting into individual words
+  -  **Stop Words Removal:** Using NLTK library to remove common English words (179 stop words)
+  -  **Stemming vs Lemmatization:** Comparing rule-based stemming (Porter Stemmer) with dictionary-based lemmatization using WordNet
+  -  **Inverted Index Creation:** Building a word-to-document mapping for efficient search
+  -  **TF-IDF Explanation:** The instructor is currently explaining Term Frequency-Inverse Document Frequency (TF-IDF) scoring:
+  -  **Term Frequency:** How often a word appears in a document divided by total words in that document
+  -  **Inverse Document Frequency:** Measures how rare or common a word is across all documents
+    -  ***The combination helps identify relevant documents for search queries***
+The session includes live coding demonstrations using Python with practical examples using pizza recipe documents.
