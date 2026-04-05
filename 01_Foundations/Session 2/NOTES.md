@@ -40,6 +40,20 @@ The instructor demonstrated how to set up and use Google Colaboratory, including
       - Multiplying these scores to find the most relevant results
       - The instructor is using a sample dataset of 10 documents about pizza recipes to demonstrate these concepts with live coding examples.
    
-  ## Limitation of TF-IDF
+## Limitation of TF-IDF
    - It doesn't understand context or meaning - only word occurrence. This led to discussion of why modern search engines use more advanced techniques like embeddings for semantic understanding.
    - The instructor demonstrated all concepts with practical coding examples using a 10-document dataset about pizza recipes.
+
+## TF-IDF Detailed Explanation
+Based on the meeting transcript, here is Noor's detailed explanation of TF (Term Frequency) and IDF (Inverse Document Frequency):
+
+- **Term Frequency (TF):**
+TF is the number of times a word appears in a document divided by the total number of words in that document. For example, if a document has 10 words and the word "pizza" occurs 1 time, then TF = 1/10 = 0.10. This calculation is done on a document-by-document basis, not across the entire corpus. The division by total words normalizes for document length - a 1,000 word document would naturally have higher counts than a 10-word document, so we care about proportion, not raw count.
+
+- **Inverse Document Frequency (IDF):**
+IDF considers the word across the entire corpus (all documents). The formula is: log(total number of documents / number of documents containing that word). For example, if there are 10 total documents and "pizza" appears in 7 of them, IDF = log(10/7). The log is used as a mathematical convention because when dealing with search engines, the numerator can be trillions of documents, and dividing by a small number would create huge numbers. The log keeps the values manageable. When IDF is low, the word is very common across documents. When IDF is high, the word is rare across documents.
+
+- **TF-IDF Score:**
+You multiply TF × IDF for each word in each document. When TF-IDF is high, it means the word appears often in this particular document AND is rare globally - making it very relevant. For a search query with multiple words, you calculate TF-IDF for each word, add them together for each document, then sort by the highest scores to rank the search results.
+
+Noor also mentioned that sometimes the formula uses log(1 + N/n) instead of just log(N/n) - this is called "smooth IDF" to avoid getting zero when a word appears in all documents (since log(1) = 0).
