@@ -74,10 +74,34 @@ Can I do real math on this?
 | ₹5L × 2       | = ₹10L ✓    | **CARDINAL** | Use raw         |
 | Apple × 2     | = ?? ❌      | **CATEGORY** | One Hot encode  |
 
-## 6. Classroom Questions to Ask Tomorrow
-1. "When do we skip One Hot encoding entirely?"
-2. "What's the difference between One Hot vs Label Encoding?"
-3. "How do we handle categories with 1000+ options (high cardinality)?"
-4. "Does One Hot work the same in NLP vs tabular data?"
 --- 
-**Date**: April 11, 2026  
+Raw Text
+    ↓
+1. **One Hot Encoding** (1980s) 
+   → Each word = single YES/NO vector
+   → "Apple" = [1,0,0], "Banana" = [0,1,0]
+   → **Problem**: Ignores word order, massive vectors
+
+2. **Bag of Words** (1990s)
+   → Counts word frequency, ignores order  
+   → "Apple apple banana" = [2,1,0]
+   → **Problem**: Still ignores order/meaning
+
+3. **TF-IDF** (2000s)
+   → Bag of Words + rarity weighting
+   → Rare words get higher scores
+
+4. **Word2Vec** (2013) → **Words as nearby vectors**
+5. **BERT/GPT** (2018+) → **Context-aware embeddings**
+
+## Quick Comparison Table - Text-to-Numbers Evolution
+
+| Method          | Word Order? | Counts Freq? | Vector Size | Use Case                    |
+|-----------------|-------------|--------------|-------------|-----------------------------|
+| **One Hot**     | ❌ No       | ❌ No        | **Huge**    | Small vocab, simple labels  |
+| **Bag of Words**| ❌ No       | ✅ Yes       | Medium      | Document classification     |
+| **TF-IDF**      | ❌ No       | ✅ Weighted  | Medium      | Search engines, ranking     |
+| **Word2Vec**    | ✅ Partial  | ❌ No        | **Small**   | Word similarity, clustering |
+| **BERT**        | ✅ Full     | ✅ Context   | Adaptive    | Modern NLP, chatbots        |
+
+**Copy-paste ready for GitHub, Sunitha!** 😊
