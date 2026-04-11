@@ -75,16 +75,16 @@ Can I do real math on this?
 | Apple × 2     | = ?? ❌      | **CATEGORY** | One Hot encode  |
 
 --- 
-## Bag of Words (BoW)
+## 6. Bag of Words (BoW)
 
 **Bag of Words (BoW)** = Imagine dumping all words from a sentence into a shopping bag, then counting how many of each you have. Order doesn't matter, just the counts.
 
 ***Dead Simple Example***
 - Sentence 1: "Cat sat mat"
-→ Bag: cat=1, sat=1, mat=1
+- → Bag: cat=1, sat=1, mat=1
 
-- Sentence 2: "Cat cat sat"  
-→ Bag: cat=2, sat=1, mat=0
+- Sentence 2: "Cat cat sat"
+- → Bag: cat=2, sat=1, mat=0
 
 **How It Looks as Numbers:**
 
@@ -102,12 +102,13 @@ Can I do real math on this?
 
 **Another Example:**
 - Employee review: "Great work team excellent"
-→ BoW: great=1, work=1, team=1, excellent=1
+- → BoW: great=1, work=1, team=1, excellent=1
 
 - Bad review: "Poor work slow team"
-→ BoW: poor=1, work=1, slow=1, team=1
+- → BoW: poor=1, work=1, slow=1, team=1
 
-Raw Text
+## **7. Evolution:**
+***Raw Text***
     ↓
 1. **One Hot Encoding** (1980s) 
    → Each word = single YES/NO vector
@@ -126,7 +127,7 @@ Raw Text
 4. **Word2Vec** (2013) → **Words as nearby vectors**
 5. **BERT/GPT** (2018+) → **Context-aware embeddings**
 
-## Quick Comparison Table - Text-to-Numbers Evolution
+**Quick Comparison Table - Text-to-Numbers Evolution**
 
 | Method          | Word Order? | Counts Freq? | Vector Size | Use Case                    |
 |-----------------|-------------|--------------|-------------|-----------------------------|
