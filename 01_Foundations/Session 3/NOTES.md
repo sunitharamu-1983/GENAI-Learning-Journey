@@ -80,14 +80,13 @@ Can I do real math on this?
 **Bag of Words (BoW)** = Imagine dumping all words from a sentence into a shopping bag, then counting how many of each you have. Order doesn't matter, just the counts.
 
 ***Dead Simple Example***
-Sentence 1: "Cat sat mat"
+- Sentence 1: "Cat sat mat"
 → Bag: cat=1, sat=1, mat=1
 
-Sentence 2: "Cat cat sat"  
+- Sentence 2: "Cat cat sat"  
 → Bag: cat=2, sat=1, mat=0
 
-How It Looks as Numbers
-Vocabulary: [cat, sat, mat]
+**How It Looks as Numbers:**
 
 | Sentence      | Cat        | Sat      | Mat           |
 |---------------|---------------|-----------|------------------|
