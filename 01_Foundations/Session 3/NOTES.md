@@ -75,6 +75,39 @@ Can I do real math on this?
 | Apple × 2     | = ?? ❌      | **CATEGORY** | One Hot encode  |
 
 --- 
+## Bag of Words (BoW)
+
+**Bag of Words (BoW)** = Imagine dumping all words from a sentence into a shopping bag, then counting how many of each you have. Order doesn't matter, just the counts.
+
+***Dead Simple Example***
+Sentence 1: "Cat sat mat"
+→ Bag: cat=1, sat=1, mat=1
+
+Sentence 2: "Cat cat sat"  
+→ Bag: cat=2, sat=1, mat=0
+
+How It Looks as Numbers
+Vocabulary: [cat, sat, mat]
+
+| Sentence      | Cat        | Sat      | Mat           |
+|---------------|---------------|-----------|------------------|
+| "Cat sat mat"   | 1 | 1 | 1         |
+| "Cat cat sat" | 2      | 1 | 0 |
+| "Mat only"      | 0   |0 | 1     |
+
+**Key Points:**
+- Ignores order: "Cat sat mat" = "Mat sat cat" (same vector)
+- Counts frequency: More apples = higher number
+- Fixed size: Always same length (vocab size)
+- Simple but dumb: No grammar, no meaning, just counts
+
+**Another Example:**
+- Employee review: "Great work team excellent"
+→ BoW: great=1, work=1, team=1, excellent=1
+
+- Bad review: "Poor work slow team"
+→ BoW: poor=1, work=1, slow=1, team=1
+
 Raw Text
     ↓
 1. **One Hot Encoding** (1980s) 
@@ -103,5 +136,3 @@ Raw Text
 | **TF-IDF**      | ❌ No       | ✅ Weighted  | Medium      | Search engines, ranking     |
 | **Word2Vec**    | ✅ Partial  | ❌ No        | **Small**   | Word similarity, clustering |
 | **BERT**        | ✅ Full     | ✅ Context   | Adaptive    | Modern NLP, chatbots        |
-
-**Copy-paste ready for GitHub, Sunitha!** 😊
