@@ -1114,3 +1114,711 @@ Transformers (full context understanding)
 > Word2Vec is the next step toward understanding meaning
 
 ---
+# 📘 Advanced Notes — Embeddings, Similarity, Limitations & Sentence Vectors
+
+---
+
+## 🧠 1. Proof That Embeddings Carry Meaning
+
+One of the strongest validations of embeddings is the ability to perform **mathematical operations on words**.
+
+---
+
+### 💡 Example
+
+```text
+king - man + woman ≈ queen
+```
+
+---
+
+### 🧠 What this shows
+
+* Words are converted into vectors (e.g., 300 dimensions)
+* These vectors are not random
+* They encode **semantic meaning**
+
+---
+
+### 💥 Insight
+
+> Embeddings are not just numbers — they represent relationships between words 
+
+---
+
+## ⚠️ 2. Core Limitation — One Word, One Vector
+
+Even though embeddings are powerful:
+
+> Each word has only ONE vector representation
+
+---
+
+### 🧠 Example: "bank"
+
+* river bank
+* bank account
+
+👉 Same word → same vector
+
+---
+
+### 💥 Problem
+
+The model cannot distinguish meaning based on sentence.
+
+---
+
+### 💡 Insight
+
+> Word2Vec embeddings are **context-independent**
+
+---
+
+## 🔍 3. Exploring Similar Words
+
+Using pretrained models, we can find:
+
+```python
+most_similar("bank")
+```
+
+---
+
+### 🧠 Observation
+
+* bank → banking, banker, lender, depositor
+
+👉 Mostly financial meaning
+
+---
+
+### 💥 Why?
+
+Because:
+
+* training data had more financial context
+
+---
+
+## ⚠️ 4. Out-of-Vocabulary (OOV) Problem
+
+If a word is not present in training data:
+
+```text
+ChatGPT → not found
+```
+
+---
+
+### 💥 Insight
+
+> Model only knows what it has seen during training
+
+---
+
+## 🧠 5. Stop Words in Embeddings
+
+Earlier (TF-IDF stage):
+
+* stop words were removed
+
+Now (embeddings stage):
+
+> Stop words are NOT removed
+
+---
+
+### 💡 Why?
+
+Because:
+
+* "not good" ≠ "good"
+* stop words affect **meaning and context**
+
+---
+
+## 🔁 6. Stemming / Lemmatization vs Embeddings
+
+Earlier:
+
+* "run", "running" → same root
+
+Now:
+
+> Each word has its own vector
+
+---
+
+### 💥 Insight
+
+* run → separate vector
+* running → separate vector
+
+👉 Meaning is learned, not reduced
+
+---
+
+## 🧠 7. How Sentence Embeddings Are Created
+
+Word2Vec gives:
+
+```text
+Word → Vector
+```
+
+---
+
+### 🎯 Problem
+
+How do we represent a full sentence?
+
+---
+
+### 💡 Solution (Simple Approach)
+
+Average all word vectors
+
+---
+
+### 🧮 Example
+
+```text
+the → [1,2,3]
+cat → [4,5,6]
+sat → [7,8,9]
+```
+
+---
+
+### Step:
+
+```text
+Sentence vector = (the + cat + sat) / 3
+```
+
+---
+
+### 💥 Insight
+
+> Sentence meaning = average of word meanings
+
+---
+
+## ⚠️ 8. Limitation of Sentence Averaging
+
+* Loses word order
+* Loses structure
+* Weak understanding of grammar
+
+---
+
+## 📐 9. Vector Dimensions (Important Concept)
+
+Different models use different vector sizes:
+
+---
+
+### Examples:
+
+* Word2Vec (Google News) → 300 dimensions
+* OpenAI embeddings → 1536 / 3072
+* Gemini embeddings → 3072
+
+---
+
+### 💡 Insight
+
+> Vector size is a design choice (hyperparameter)
+
+---
+
+### ❗ Important
+
+Vector size ≠ number of meanings
+
+---
+
+## 🔗 10. What Do These Numbers Represent?
+
+Each dimension captures some aspect of meaning:
+
+* context
+* usage
+* relationships
+
+---
+
+### 💥 Insight
+
+> Meaning is distributed across multiple dimensions
+
+---
+
+## 🧠 11. What is Embedding (Final Definition)
+
+> Embedding is the process of converting a word into a vector that captures its meaning across multiple dimensions.
+
+---
+
+## ⚠️ 12. Key Limitations Recap
+
+---
+
+### ❗ 1. Context Problem
+
+Same word → same vector
+
+---
+
+### ❗ 2. OOV Problem
+
+Unknown words → no vector
+
+---
+
+### ❗ 3. Sentence Weakness
+
+Averaging loses structure
+
+---
+
+## 🚀 13. Why We Move Beyond Word2Vec
+
+Because:
+
+* meaning depends on context
+* sentence structure matters
+
+---
+
+### 💥 This leads to:
+
+* Contextual embeddings
+* Transformers
+* Attention mechanisms
+
+---
+
+## 🧭 14. Final Mental Model
+
+```text
+Word → Vector (Word2Vec)
+Sentence → Average of vectors
+Meaning → Encoded in numbers
+Limitation → No context awareness
+Solution → Transformers
+```
+
+---
+
+## 🏁 15. Summary
+
+* Embeddings capture meaning numerically
+* Vector math proves semantic relationships
+* Each word has a fixed vector
+* Cannot handle multiple meanings
+* Sentence embeddings can be approximated using averaging
+* Leads to next evolution → Transformers
+
+---
+
+## 💡 Final Insight
+
+> Word2Vec was a breakthrough because it introduced meaningful word representations, but its inability to handle context led to the rise of modern NLP architectures.
+
+---
+# 📘 Advanced Notes — Embedding Selection, Preprocessing Trade-offs & Real-World Design Decisions
+
+---
+
+## 🧠 1. Big Shift — From Learning Concepts to Making Decisions
+
+At this stage, the focus moves from:
+
+> “What is embedding?”
+
+to
+
+> “Which embedding should I use and why?”
+
+---
+
+### 💡 Key Insight
+
+> Every AI system requires choosing the right embedding model based on the use case 
+
+---
+
+## 🔗 2. Multiple Embedding Models Exist
+
+Different organizations provide their own embeddings:
+
+* Google (Word2Vec, Gemini embeddings)
+* OpenAI (text-embedding models)
+* Meta (FastText)
+
+---
+
+### 💡 Important Understanding
+
+> There is no single “best” embedding model
+
+---
+
+### Instead:
+
+Selection depends on:
+
+* use case
+* domain
+* data type
+* performance needs
+
+---
+
+## ⚙️ 3. Choosing the Right Embedding Model
+
+---
+
+### 🧠 Key Factors
+
+#### 🔹 1. Domain-Specific Data
+
+Example:
+
+* Healthcare chatbot → use healthcare-trained embeddings
+* Legal documents → use legal embeddings
+
+---
+
+#### 🔹 2. Type of Data
+
+* Generic text → general embeddings
+* Company-specific data → custom-trained embeddings
+
+---
+
+### 💥 Insight
+
+> If your data is very specific, pretrained models may not understand it properly
+
+---
+
+## 🧠 4. When Should You Train Your Own Model?
+
+---
+
+### 📌 Scenario
+
+If your data contains:
+
+* internal terminology
+* company-specific keywords
+* domain-specific abbreviations
+
+---
+
+### 💡 Example
+
+Company uses:
+
+```text
+DMD → Demand
+```
+
+---
+
+### ❗ Problem
+
+Pretrained model does NOT understand this mapping
+
+---
+
+### 💥 Solution
+
+> Train your own embedding model or provide context explicitly
+
+---
+
+## 🔗 5. Embeddings + LLM + Schema (Important Concept)
+
+---
+
+### 🧠 Problem
+
+User asks:
+
+```text
+"What is the demand?"
+```
+
+Database column:
+
+```text
+DMD
+```
+
+---
+
+### ❗ Issue
+
+Embedding cannot match:
+
+* "demand" ≠ "DMD"
+
+---
+
+### 💡 Solution
+
+Provide:
+
+* metadata
+* schema
+* column definitions
+
+---
+
+### 💥 Insight
+
+> LLM needs context (schema/metadata) to map natural language to structured data
+
+---
+
+## ⚠️ 6. Preprocessing Debate — Stemming & Lemmatization
+
+This was a critical discussion.
+
+---
+
+### 🔹 Old Approach (TF-IDF)
+
+* remove stop words
+* apply stemming
+* reduce vocabulary
+
+---
+
+### 🔹 New Approach (Embeddings)
+
+> Do NOT apply stemming or lemmatization by default
+
+---
+
+### 💥 Why?
+
+Because:
+
+* embeddings rely on full word meaning
+* removing parts may distort meaning
+
+---
+
+## ⚖️ 7. Trade-off — Accuracy vs Speed
+
+---
+
+### 🧠 Scenario
+
+Large dataset (e.g., resumes, e-commerce data)
+
+---
+
+### Option 1: No preprocessing
+
+* ✅ better accuracy
+* ❌ slower search
+
+---
+
+### Option 2: Apply stemming/lemmatization
+
+* ✅ faster search
+* ❌ possible loss of meaning
+
+---
+
+### 💡 Key Decision
+
+> Depends on use case
+
+---
+
+### 🔥 Real Insight
+
+> Faster wrong answer is worse than slower correct answer
+
+---
+
+## 🧠 8. Chunking & Vector Search
+
+When building applications:
+
+* data is split into chunks
+* each chunk → converted to vector
+* stored in vector database
+
+---
+
+### 💡 Question Raised
+
+Can preprocessing reduce chunks?
+
+---
+
+### Answer
+
+Yes — but:
+
+> It may reduce context quality
+
+---
+
+## ⚠️ 9. Important Risk
+
+If you:
+
+* remove words
+* alter structure
+
+👉 embedding quality reduces
+
+---
+
+## 🧠 10. Out-of-Vocabulary (OOV) Revisited
+
+---
+
+### 📌 Problem
+
+Word not present in training:
+
+```text
+ChatGPT → not found
+```
+
+---
+
+### 💡 Reason
+
+Model trained on old dataset
+
+---
+
+### 💥 Insight
+
+> Models only know what they were trained on
+
+---
+
+## 🚀 11. Evolution Beyond Word2Vec — FastText
+
+---
+
+### 📌 Problem with Word2Vec
+
+* Cannot handle unknown words
+* Cannot handle sub-word structure
+
+---
+
+### 💡 Solution: FastText (2017)
+
+Introduced by Meta (Facebook)
+
+---
+
+### 🔹 Key Idea
+
+Instead of learning:
+
+* word → vector
+
+It learns:
+
+> sub-words → vector
+
+---
+
+### 🧠 Example
+
+Word: "running"
+
+FastText breaks into:
+
+```text
+run, runn, unning, etc.
+```
+
+---
+
+### 💥 Advantage
+
+* Handles unseen words
+* Better generalization
+
+---
+
+## 🔗 12. Key Difference — Word2Vec vs FastText
+
+| Feature        | Word2Vec   | FastText  |
+| -------------- | ---------- | --------- |
+| Input          | Whole word | Sub-words |
+| OOV handling   | ❌ No       | ✅ Yes     |
+| Generalization | Limited    | Better    |
+
+---
+
+## 🧭 13. Real-World Thinking (Most Important Part)
+
+---
+
+### 💡 When building applications:
+
+You must decide:
+
+* Accuracy vs Speed
+* Generic vs Domain-specific
+* Pretrained vs Custom
+
+---
+
+### 💥 There is no fixed rule
+
+> Engineering decisions depend on constraints
+
+---
+
+## 🏁 14. Final Mental Model
+
+```text
+Text
+ ↓
+Preprocessing (optional)
+ ↓
+Embedding (model choice)
+ ↓
+Vector DB
+ ↓
+Search / Retrieval
+ ↓
+LLM (with context)
+```
+
+---
+
+## 💡 Final Insight
+
+> AI systems are not just about models — they are about making the right design decisions.
+
+---
+
+## 🔥 Key Takeaways
+
+* Embedding model choice is critical
+* Preprocessing is not always beneficial
+* Context (schema/metadata) is essential
+* Word2Vec has limitations → FastText improves it
+* Real-world AI = trade-offs, not fixed rules
+
+---
