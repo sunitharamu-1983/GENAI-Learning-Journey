@@ -246,3 +246,261 @@ This numerical representation is then used by machine learning and AI models to 
 The evolution from one-hot encoding → TF-IDF → embeddings reflects increasing ability to capture meaning, not just words.
 
 ---
+# 📘 Deep Learning Basics for NLP (Weights, Layers, Backpropagation)
+
+---
+
+## 🧠 1. Big Picture First
+
+Before going into terms, understand this:
+
+A neural network is simply a system that:
+
+* takes input (numbers)
+* processes it through layers
+* produces an output (prediction)
+
+In NLP (like Word2Vec), the goal is:
+
+> Given some words → predict another word
+
+---
+
+## ⚙️ 2. What are Layers?
+
+A neural network has **3 main types of layers**:
+
+### 🔹 Input Layer
+
+* Where data enters the system
+* Example: words converted into numbers (vectors)
+
+---
+
+### 🔹 Hidden Layer
+
+* Where **learning happens**
+* This is where patterns are formed
+* In Word2Vec, this layer becomes the **embedding (meaning representation)**
+
+---
+
+### 🔹 Output Layer
+
+* Final prediction
+* Example: predicted word
+
+---
+
+### 💡 Simple Flow
+
+Input → Hidden Layer → Output
+
+---
+
+## 🧠 3. What are Weights?
+
+### 💡 Definition
+
+Weights are **numbers that control how important each input is**
+
+---
+
+### 🧠 Think of it like this:
+
+You are making a decision:
+
+```text
+Output = (Input1 × Weight1) + (Input2 × Weight2)
+```
+
+---
+
+### 🔹 Example (Real-life analogy)
+
+Predict gender from:
+
+* height
+* weight
+
+```text
+Output = (height × 0.6) + (weight × 0.4)
+```
+
+👉 Here:
+
+* 0.6 and 0.4 = weights
+* They define importance
+
+---
+
+### 💥 In Neural Networks
+
+* Every connection between neurons has a weight
+* These weights are **learned automatically**
+
+---
+
+## 🔁 4. What is Backpropagation?
+
+### 💡 Definition
+
+Backpropagation is the process of:
+
+> **correcting weights when the prediction is wrong**
+
+---
+
+### 🧠 Step-by-step intuition
+
+1. Model makes a prediction
+2. Compare with actual answer
+3. Calculate error
+4. Go back and adjust weights
+5. Repeat many times
+
+---
+
+### 🔄 Example
+
+Prediction: "dog"
+Actual: "cat"
+
+👉 Error exists
+
+So system:
+
+* adjusts weights
+* tries again
+
+---
+
+### 💥 Key Idea
+
+> The model improves by learning from mistakes
+
+---
+
+## ⚙️ 5. How Layers Actually Work Together
+
+Let’s simplify what your instructor showed.
+
+---
+
+### Step 1: Input comes in
+
+Example:
+
+```text
+"cat" and "sat"
+```
+
+Converted into vectors (numbers)
+
+---
+
+### Step 2: Pass through hidden layer
+
+* Inputs are multiplied with weights
+* Combined together
+* Passed forward
+
+---
+
+### Step 3: Output layer predicts
+
+Example:
+
+```text
+Predicted word = "on"
+```
+
+---
+
+### Step 4: Compare with actual
+
+Actual:
+
+```text
+"on"
+```
+
+If correct → good
+If wrong → adjust weights
+
+---
+
+### Step 5: Backpropagation
+
+* Error is sent backward
+* Weights are updated
+* Model improves
+
+---
+
+## 🧠 6. Why Hidden Layer is Important
+
+The hidden layer:
+
+* compresses information
+* learns patterns
+* captures relationships
+
+---
+
+### 💥 In Word2Vec
+
+Hidden layer = **word embedding**
+
+👉 This is where meaning is stored
+
+---
+
+## 🔗 7. Connecting to Embeddings
+
+Full flow:
+
+```text
+Words → Input Layer → Hidden Layer → Output Layer
+           ↓              ↓
+      Numbers         Meaning (Embeddings)
+```
+
+---
+
+## 💡 8. Key Insights
+
+* Weights determine how inputs influence outputs
+* Backpropagation adjusts weights using error
+* Hidden layers learn patterns and meaning
+* More layers → deeper learning
+* Embeddings come from hidden layers
+
+---
+
+## 🧭 9. Simple Mental Model
+
+Think of it like learning:
+
+* First attempt → wrong
+* Adjust thinking
+* Try again
+* Improve over time
+
+👉 That is exactly what the model does
+
+---
+
+## 🏁 10. Final Summary
+
+A neural network learns by:
+
+* taking inputs
+* applying weights
+* predicting outputs
+* correcting itself using backpropagation
+
+Over time, it becomes better at understanding patterns —
+which in NLP results in meaningful word representations (embeddings).
+
+---
