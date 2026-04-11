@@ -45,10 +45,10 @@ Wrong encoding: Coimbatore=1, Chennai=2, Mumbai=3
 ## 4. Real-World AI Training Example (Your IT Work)
 
 **Employee Dataset**:
-├── Age: 43 years (CARDINAL → use raw number 43)
-├── Salary: ₹8L (CARDINAL → use raw number 800000)
-├── Department: IT (CATEGORY → One Hot encode)
-├── City: Coimbatore (CATEGORY → One Hot encode)
+1. Age: 43 years (CARDINAL → use raw number 43)
+2. Salary: ₹8L (CARDINAL → use raw number 800000)
+3. Department: IT (CATEGORY → One Hot encode)
+4. City: Coimbatore (CATEGORY → One Hot encode)
 
 
 **Final Table Ready for AI Model**:
