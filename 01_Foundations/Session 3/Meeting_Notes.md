@@ -504,3 +504,251 @@ Over time, it becomes better at understanding patterns —
 which in NLP results in meaningful word representations (embeddings).
 
 ---
+# 📘 Word2Vec Deep Understanding — Weights, Backpropagation & Embeddings
+
+---
+
+## 🧠 1. Big Picture
+
+The goal of Word2Vec is:
+
+> Convert words into numbers (vectors) that **capture meaning**
+
+To achieve this, a **neural network** is trained using large text data.
+
+---
+
+## ⚙️ 2. What Happens During Training
+
+The model is trained using sentences like:
+
+"The cat sat on the mat"
+
+The system creates multiple training examples:
+
+* Input: cat ___ on → Output: sat
+* Input: ___ sat on → Output: cat
+* Input: sat on ___ → Output: the
+
+---
+
+### 💡 Key Idea
+
+> The model learns by predicting missing words using context
+
+---
+
+## 🔢 3. Input Representation
+
+Each word is initially converted into a **one-hot vector**
+
+Example:
+
+cat → [0, 1, 0, 0, 0]
+
+This is just a starting point — no meaning yet.
+
+---
+
+## 🧠 4. Neural Network Structure
+
+The model consists of:
+
+* Input Layer → one-hot vectors
+* Hidden Layer → learns representation
+* Output Layer → predicted word
+
+---
+
+### 📌 Important
+
+The **hidden layer becomes the embedding space**
+
+---
+
+## ⚖️ 5. What are Weights?
+
+Weights are:
+
+> Numerical values that define how input flows through the network
+
+---
+
+### 💡 Intuition
+
+Every connection between layers has a weight:
+
+Input × Weight → Passed forward
+
+---
+
+### 🧠 Example
+
+If input = "cat"
+
+The model applies weights to transform it into another form internally.
+
+---
+
+## 🔁 6. What is Backpropagation?
+
+Backpropagation is:
+
+> The process of adjusting weights when predictions are wrong
+
+---
+
+### 🔄 Learning Cycle
+
+1. Model predicts output
+2. Compare with actual word
+3. Calculate error
+4. Adjust weights
+5. Repeat millions of times
+
+---
+
+### 💥 Key Insight
+
+> Weights are initially random and get optimized over time 
+
+---
+
+## 🧠 7. What Does the Model Actually Learn?
+
+After training on **billions of examples**:
+
+* The weights capture patterns of language
+* The model learns which words appear together
+
+---
+
+### 💡 Important Insight
+
+> The model does not "understand" language like humans
+> But it captures patterns that behave like understanding
+
+---
+
+## 📐 8. How Embeddings Are Created
+
+After training:
+
+We take the **trained weights** and use them to generate embeddings.
+
+---
+
+### 🧮 Process
+
+Word vector (one-hot) × learned weight matrix → embedding
+
+---
+
+### 📌 Example
+
+cat → [0,1,0,0,0]
+
+Multiply with weight matrix →
+
+cat → [0.2, -0.5, 0.8]
+
+---
+
+### 💥 Result
+
+> Each word becomes a dense vector that holds meaning
+
+---
+
+## 🧠 9. Why These Vectors Have Meaning
+
+Because:
+
+* Model saw millions of contexts
+* Adjusted weights accordingly
+* Learned relationships between words
+
+---
+
+### 💡 Insight
+
+> Words used in similar contexts → get similar vectors
+
+---
+
+## 🔗 10. Language Understanding Through Numbers
+
+From training:
+
+* "cat" appears near "sat"
+* "dog" appears near "runs"
+
+So:
+
+cat ≈ dog (context similarity)
+
+---
+
+## 💥 Important Realization
+
+> The vector itself is just numbers
+> But those numbers encode patterns of language
+
+---
+
+## ⚠️ 11. Limitation of Word Embeddings
+
+Same word → same vector (no context awareness)
+
+---
+
+### 🧠 Example
+
+* "river bank"
+* "bank account"
+
+👉 "bank" has **same embedding** ❌
+
+---
+
+### 💡 Insight
+
+> Word2Vec does not understand context fully
+
+---
+
+## 🚀 12. Why Transformers Came Next
+
+To solve this problem:
+
+> Context-dependent meaning
+
+This led to:
+
+* Transformers
+* Attention mechanism
+
+---
+
+## 🧭 13. Final Mental Model
+
+```text
+Step 1: Take sentence
+Step 2: Hide a word
+Step 3: Predict it
+Step 4: Adjust weights (backpropagation)
+Step 5: Repeat millions of times
+Step 6: Extract embeddings from learned weights
+```
+
+---
+
+## 🏁 14. Summary
+
+* Weights store learned patterns of language
+* Backpropagation improves weights through error correction
+* Hidden layer captures meaning
+* Embeddings are extracted from trained weights
+* These embeddings allow machines to work with language meaningfully
+
+---
