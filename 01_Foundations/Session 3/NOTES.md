@@ -1,14 +1,14 @@
-# Cardinal Variables vs One Hot Encoding - Complete Guide (Sunitha Ramu)
+# Cardinal Variables vs One Hot Encoding
 
 ## 1. Cardinal Variables = "Real Numbers" ✅
 **Definition**: Numbers where math actually means something. You can add, subtract, multiply, and the results make real-world sense.
 
 **Examples**:
-Age: 43 → "43 is 2x bigger than 21" ✓
-₹5 lakhs salary → "5 lakhs is 2x 2.5 lakhs" ✓
-65kg weight → "65kg > 50kg by 15kg" ✓
-Distance: 10km → "10km is twice 5km" ✓
-Temperature: 37°C → "37°C is hotter than 25°C by 12°" ✓
+- Age: 43 → "43 is 2x bigger than 21" ✓
+- ₹5 lakhs salary → "5 lakhs is 2x 2.5 lakhs" ✓
+- 65kg weight → "65kg > 50kg by 15kg" ✓
+- Distance: 10km → "10km is twice 5km" ✓
+- Temperature: 37°C → "37°C is hotter than 25°C by 12°" ✓
 
 
 **Key Test**: "Can I multiply this by 2 and it still makes sense?"
@@ -61,8 +61,8 @@ Wrong encoding: Coimbatore=1, Chennai=2, Mumbai=3
 
 ## 5. Quick Decision Tree
 Can I do real math on this?
-├── YES → Cardinal → Use raw numbers directly
-└── NO → Category → One Hot encode first
+- YES → Cardinal → Use raw numbers directly
+- NO → Category → One Hot encode first
 
 
 **Examples Test**:
@@ -79,11 +79,5 @@ Can I do real math on this?
 2. "What's the difference between One Hot vs Label Encoding?"
 3. "How do we handle categories with 1000+ options (high cardinality)?"
 4. "Does One Hot work the same in NLP vs tabular data?"
-
----
-
-**Created by**: Sunitha Ramu (IT Professional, Coimbatore, Tamil Nadu)  
-**With**: Perps (Perplexity AI Companion)  
+--- 
 **Date**: April 11, 2026  
-**Purpose**: AI Training Notes - GitHub Repository Ready  
-**Version**: 1.0 - Complete & Self-Contained
