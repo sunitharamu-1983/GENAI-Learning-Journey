@@ -70,13 +70,12 @@ These documents have the same meaning, just repeated.
 - Cosine similarity: 1 (shows them as identical/same meaning)
 
 ### Example 2: ML vs AI Documents
-
 - Machine Learning (41 words)
 - AI (135 words)
 - Football (43 words)
 - Tennis (46 words)
-- Euclidean distance results:
 
+### Euclidean distance results:
 - ML and AI: 11.958 (far apart)
 - ML and Football: 8.6 (closest)
 - ML and Tennis: 8.86
