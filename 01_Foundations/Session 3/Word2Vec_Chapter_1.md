@@ -1,4 +1,4 @@
-# Chapter: Understanding Word2Vec and Distributed Word Representations
+# Chapter - 1 : Understanding Word2Vec and Distributed Word Representations
 
 #### Introduction to Word2Vec
 **Word2Vec** is a widely used algorithm based on **shallow neural networks** designed to learn relationships between words automatically from large volumes of unannotated plain text,. Unlike traditional Natural Language Processing (NLP) techniques that treat words as atomic units or indices in a vocabulary, Word2Vec represents words as **continuous vectors** in a lower-dimensional space,. The model ensures that word-vectors for terms with similar meanings are positioned close to each other in this vector space, while those with different meanings are distant. This allows for the discovery of **linear relationships**, such as the famous example: `vec("king") - vec("man") + vec("woman") =~ vec("queen")`,.
