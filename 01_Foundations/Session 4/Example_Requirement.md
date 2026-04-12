@@ -1,4 +1,6 @@
-# Requirement is to build a content-based recommendation engine for movies, similar to what Netflix or Amazon Prime uses.
+# Content Based Recommendation
+
+## Requirement is to build a content-based recommendation engine for movies, similar to what Netflix or Amazon Prime uses
 
 ### Here's a quick summary of the requirement:
 
@@ -18,4 +20,4 @@
 
 ---
 
-The instructor mentioned there are other types like user-based and item-based recommendations, but this exercise focuses on content-based using the movie metadata provided in the IMDB dataset.
+***The instructor mentioned there are other types like user-based and item-based recommendations, but this exercise focuses on content-based using the movie metadata provided in the IMDB dataset.***
