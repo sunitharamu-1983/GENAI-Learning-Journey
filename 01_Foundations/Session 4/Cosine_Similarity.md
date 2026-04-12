@@ -84,4 +84,6 @@ These documents have the same meaning, just repeated.
 
 ***Cosine similarity correctly identifies ML and AI as most similar because it focuses on direction/meaning rather than document length.***
 
-**Key Point: Euclidean distance is affected by magnitude (how many times words occur), while cosine similarity cares about direction (the meaning/context). For text analysis, meaning matters more than word count, which is why cosine similarity is preferred for NLP tasks.**
+---
+
+### Key Point: Euclidean distance is affected by magnitude (how many times words occur), while cosine similarity cares about direction (the meaning/context). For text analysis, meaning matters more than word count, which is why cosine similarity is preferred for NLP tasks.
