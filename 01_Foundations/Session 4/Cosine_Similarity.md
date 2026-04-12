@@ -87,3 +87,28 @@ These documents have the same meaning, just repeated.
 ---
 
 ### Key Point: Euclidean distance is affected by magnitude (how many times words occur), while cosine similarity cares about direction (the meaning/context). For text analysis, meaning matters more than word count, which is why cosine similarity is preferred for NLP tasks.
+
+---
+
+## Count Vectorizer (Bag of Words):
+
+Count Vectorizer is a technique that converts text documents into numerical vectors. It counts how many times each word appears in a document. For example, if you have documents about "ML", "AI", "football", and "tennis", Count Vectorizer creates columns for all unique words and shows the count of each word's occurrence in each document.
+
+***In the meeting example, they showed:***
+
+- Document 0 (ML document): Each unique word gets counted
+- Document 1 (AI document): The word "AI" occurred 3 times, "artificial" occurred 4 times
+- The vocabulary size was 136 columns (136 unique words across all documents)
+
+### The Process Shown:
+- Create a Count Vectorizer object with stop words removed (common words like "the", "is" filtered out)
+- Use fit_transform() to convert documents into arrays
+- Convert the sparse array to a numpy array, then to a Pandas dataframe for viewing
+- Each row represents a document, each column represents a unique word, and the values show occurrence counts
+
+### Key Problem Discussed:
+The instructor explained that Count Vectorizer (bag of words) has a limitation - it only captures word frequency, not context or meaning. This is why they were comparing Euclidean distance vs Cosine similarity for measuring document similarity.
+
+---
+
+**The main point was that bag of words gives numbers based on word counts, but these numbers don't hold the contextual meaning that embeddings provide.**
