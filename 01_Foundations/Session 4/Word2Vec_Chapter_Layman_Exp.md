@@ -1,4 +1,4 @@
-# Chapter 2: Word2Vec in Plain English—The Story of the "Word Map"
+# Chapter - 2: Word2Vec in Plain English—The Story of the "Word Map"
 
 To understand **Word2Vec** without the math, imagine you are creating a **giant map of every word in the dictionary**. In a regular dictionary, words are just listed in alphabetical order. But in our "Word2Vec Map," words aren't placed by their spelling; they are placed by **who they hang out with** and **what they mean**.
 

@@ -1,4 +1,4 @@
-# Characater N-Grams:
+# Chapter - 5: Characater N-Grams:
 
 **Character n-grams** are subword units consisting of sequences of $n$ characters extracted from a word. In models like FastText, they are used to represent words as a collection of these smaller parts rather than as a single, atomic unit. This approach allows the system to capture **morphological information**, which is particularly useful for rare words or languages with complex word structures.
 

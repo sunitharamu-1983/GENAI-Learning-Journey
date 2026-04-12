@@ -1,4 +1,4 @@
-# Word2Vec & FastText - Difference
+# Chapter - 7: Word2Vec & FastText - Difference
 
 Yes, **Word2Vec and FastText are different**, although **FastText is technically an extension** of the Word2Vec skip-gram model.
 

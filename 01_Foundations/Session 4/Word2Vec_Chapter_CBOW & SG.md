@@ -1,4 +1,4 @@
-# CBOW & SG - Definition & Overview
+# Chapter - 4: CBOW & SG - Definition & Overview
 
 Imagine you have a **giant playground** where every word in the world has its own special spot to sit. **Word2Vec** is the system that decides exactly where each word's spot should be.
 

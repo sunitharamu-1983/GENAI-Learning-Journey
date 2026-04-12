@@ -1,4 +1,4 @@
-# Chapter 3: Practical Implementation—Word2Vec Code Examples
+# Chapter - 3: Practical Implementation—Word2Vec Code Examples
 
 Implementing **Word2Vec** is made highly efficient through the **Gensim** library, which provides Pythonic interfaces for training, saving, and querying models. Below are code-level examples derived from the sources to demonstrate how to use these tools.
 

@@ -1,4 +1,4 @@
-# FASTTESXT Explanation
+# Chapter - 6: FASTTESXT Explanation
 
 **FastText** is an extension of the Word2Vec skip-gram model that represents words as a **sum of their subword units**, specifically character **n-grams**. While traditional models like Word2Vec treat words as atomic units and assign a distinct vector to each one, FastText takes into account the **internal structure of words**, allowing it to capture morphological information that other models ignore.
 
