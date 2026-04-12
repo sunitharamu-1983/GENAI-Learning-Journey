@@ -310,6 +310,28 @@ model.most_similar("king")
 
 ---
 
+In Word2Vec, scaled vectors are considered to have the same meaning because the model measures similarity based on the direction (angle) of vectors, not their magnitude (length). Two vectors pointing in the same direction—even if one is twice as long as the other—are deemed semantically identical. 
+
+#### Here is an explanation and the calculation for your vectors.
+
+1. **Why are Scaled Vectors Considered the "Same"?**
+Direction Over Magnitude: Word2Vec places words with similar context near each other. Words with the exact same meaning in different contexts may have different lengths (magnitudes) but point in the same direction in the high-dimensional space.
+Cosine Similarity: Word2Vec uses Cosine Similarity to compare vectors, not Euclidean distance. Cosine similarity calculates the cosine of the angle between two vectors.
+Result: A, [1,2,3], and B, [4,5,6], are scaled versions of each other (roughly). If you draw them, they point along the same line from the origin.
+
+2. **Calculation:**
+Cosine Similarity for A=[1,2,3] and B=[4,5,6] 
+We will use the cosine similarity formula:
+
+Where: A.B / |A||B| & A.B is the dot product & |A| is the magnitude of vector A & |B| is the magnitude of vector B. 
+- Step 1: Calculate the Dot Product = **(1x4) + (2x5) + (3x6) = 32**
+- Step 2: Calculate Magnitude of A = **Sqrt(1*1 + 2*2 + 3*3) = 3.742**
+- Step 3: Calculate Magnitude of B = **Sqrt(4*4 + 5*5 + 6*6) = 8.775**
+- Step 4: Calculate Cosine Similarity = **(32/(3.742x8.775)) = 0.974**
+
+#### Conclusion of Calculation
+The cosine similarity of 0.974 is very close to 1, indicating that although the vectors have different magnitudes, they are highly similar in direction and represent nearly identical semantic meaning.
+
 ### Case: Zero vector
 
 ```
