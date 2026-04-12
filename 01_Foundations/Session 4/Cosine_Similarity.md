@@ -30,7 +30,7 @@ Let's say we have two documents:
 - Document A: (1,1)
 - Document B: (2,2)
 
-## Cosine Similarity Formula:
+### Cosine Similarity Formula:
 - Cosine Similarity = (A · B) / (|A| × |B|)
 
 Where:
@@ -38,7 +38,7 @@ Where:
 - A · B is the dot product (multiply corresponding elements and add them)
 - |A| and |B| are the magnitudes (square root of sum of squared elements)
 
-## Applying the formula:
+### Applying the formula:
 
 - **Dot Product (Numerator):**
   - (1 × 2) + (1 × 2) = 2 + 2 = 4
@@ -52,3 +52,37 @@ Where:
 - **Final Calculation:**
   - 4 / (√2 × √8) = 4 / √16 = 4 / 4 = 1
   - **Result:** The cosine similarity is 1, which means the documents are perfectly similar (same direction/meaning), even though Document B has larger values. This shows that cosine similarity cares about direction, not magnitude.
+
+---
+
+## Cosine Similarity trumps Euclidean Distance - How? 
+
+Based on the meeting transcript, here are examples showing how cosine similarity trumps Euclidean distance:
+
+### Example 1: Repeated Words
+
+- Document A: "very good" (vector: 1,1)
+- Document B: "very good very good" (vector: 2,2)
+
+These documents have the same meaning, just repeated.
+
+- Euclidean distance: √[(2-1)² + (2-1)²] = 1.414 (shows them as different)
+- Cosine similarity: 1 (shows them as identical/same meaning)
+
+### Example 2: ML vs AI Documents
+
+- Machine Learning (41 words)
+- AI (135 words)
+- Football (43 words)
+- Tennis (46 words)
+- Euclidean distance results:
+
+- ML and AI: 11.958 (far apart)
+- ML and Football: 8.6 (closest)
+- ML and Tennis: 8.86
+
+***This incorrectly shows ML is most similar to Football, just because their document lengths are similar. But contextually, ML and AI should be most similar.*** 
+
+***Cosine similarity correctly identifies ML and AI as most similar because it focuses on direction/meaning rather than document length.***
+
+**Key Point: Euclidean distance is affected by magnitude (how many times words occur), while cosine similarity cares about direction (the meaning/context). For text analysis, meaning matters more than word count, which is why cosine similarity is preferred for NLP tasks.**
