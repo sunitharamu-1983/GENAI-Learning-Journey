@@ -85,3 +85,9 @@ So, you hire a committee:
 - Inspector 3 (Head 3): Only cares about What is the emotional tone? (Sentiment)
 
 *They all read the exact same sentence at the exact same time. When they are done, you staple their three reports together. You don't just know what "it" means anymore; you know what "it" means, plus the grammar, plus the tone. That is Multi-Head Attention*
+
+---
+
+### Summary
+
+*Self-Attention is the base mechanism where words use Q, K, and V to find context within their own sentence. Multi-Head Attention is simply running that exact same process multiple times in parallel—like having 8 different analysts look at the same data for different patterns—and then combining their outputs so the model captures grammar, semantics, and context all at once.*
