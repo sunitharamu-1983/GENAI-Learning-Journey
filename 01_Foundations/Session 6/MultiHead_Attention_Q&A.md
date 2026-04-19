@@ -1,4 +1,4 @@
-# Multi Head Attention - Q & A:
+# Multi Head Attention - Q & A
 
 ---
 
