@@ -28,13 +28,13 @@ The paper solved two massive problems at once:
 
 ### 📈 The NLP Evolution Timeline
 
-- [1954] BoW ──────────────────────────────────────────────────────▶ Simple counts, no meaning.
-- [1972] TF-IDF ──────────────────────────────────────────────────▶ Word importance based on frequency.
-- [2013] Word2Vec ────────────────────────────────────────────────▶ Dense vectors, but STATIC meaning.
-- [2014] GloVe & Seq2Seq ────────────────────────────────────────▶ Encoder/Decoder, but SEQUENTIAL bottleneck.
-- [2016] FastText ────────────────────────────────────────────────▶ Sub-word embeddings.
-- [2017] TRANSFORMER ("Attention is All You Need") ───────────▶ PARALLEL processing + DYNAMIC context.
-- [2018+] BERT, GPT-1/2/3/4 ─────────────────────────────────────▶ The Modern LLM Era.
+- [1954] BoW ───────────────────────────────────────────────▶ Simple counts, no meaning.
+- [1972] TF-IDF ────────────────────────────────────────────▶ Word importance based on frequency.
+- [2013] Word2Vec ──────────────────────────────────────────▶ Dense vectors, but STATIC meaning.
+- [2014] GloVe & Seq2Seq ───────────────────────────────────▶ Encoder/Decoder, but SEQUENTIAL bottleneck.
+- [2016] FastText ──────────────────────────────────────────▶ Sub-word embeddings.
+- [2017] TRANSFORMER ("Attention is All You Need") ─────────▶ PARALLEL processing + DYNAMIC context.
+- [2018+] BERT, GPT-1/2/3/4 ────────────────────────────────▶ The Modern LLM Era.
 
 ### 🍎 The "Apple" Analogy: Static vs. Dynamic Embeddings
 
