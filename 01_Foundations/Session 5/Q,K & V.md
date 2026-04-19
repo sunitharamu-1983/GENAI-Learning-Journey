@@ -80,6 +80,4 @@ Let's focus purely on the word "**apple**" trying to figure out its own identity
              Mix them together.
              │
              ▼
-RESULT: A brand new, transformed vector for APPLE.
-        It is no longer generic. It is mathematically "weighted" towards food.
-```
+RESULT: A brand new, transformed vector for APPLE. It is no longer generic. It is mathematically "weighted" towards food.
