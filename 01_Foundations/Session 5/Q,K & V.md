@@ -8,7 +8,7 @@ Imagine you go to Google.
 - **Value (V):** You click on a website. The actual text, pictures, and menus on the page are the Value. The Value is the actual content you
   consume.
 - **The Math behind the scenes:** Google takes your Query and compares it against millions of Keys.
-    - Query("Italian") × Key("Italian Restaurant") = High Score (90%)
+    - Query("Italian") x Key("Italian Restaurant") = High Score (90%)
     - Query("Italian") x Key("Plumbing") = Low Score (2%)
 
 - Google then takes those percentages (using Softmax) and uses them to rank the Values (the actual websites). You get Italian websites, not
