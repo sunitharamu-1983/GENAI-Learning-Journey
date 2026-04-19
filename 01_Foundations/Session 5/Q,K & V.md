@@ -59,31 +59,36 @@ Let's focus purely on the word "**apple**" trying to figure out its own identity
 
   ***The system takes Apple's score for "eat" (80%) and says: "Okay Apple, take 80% of 'eat's mathematical Value and absorb it into yourself."***
 
-  ### Text Infographic - The Apple Transformation
-  ```
-  SENTENCE: "I bought an [APPLE] to eat."
+---
 
-   [APPLE] needs to know: "What am I?"
-      │
-      ├─> APPLE creates a QUERY: "Looking for Food context"
-      │
-      ├─> OTHER WORDS create KEYS:
-      │      "I"       -> Key: "Pronoun"
-      │      "bought"  -> Key: "Commerce"
-      │      "eat"     -> Key: "FOOD"  <-- BINGO!
-      │
-      ├─> SCORING (Query × Key):
-      │      Apple × "I"       = 5% relevance
-      │      Apple × "bought"  = 15% relevance
-      │      Apple × "eat"     = 80% relevance
-      │
-      └─> EXTRACT VALUE:
-             Take 80% of "eat's" VALUE (its raw math data about food)
-             Take 15% of "bought's" VALUE
-             Mix them together.
-             │
-             ▼
+### Text Infographic - The Apple Transformation
+```
+SENTENCE: "I bought an [APPLE] to eat."
+
+[APPLE] needs to know: "What am I?"
+│
+├─> APPLE creates a QUERY: "Looking for Food context"
+│
+├─> OTHER WORDS create KEYS:
+│      "I"       -> Key: "Pronoun"
+│      "bought"  -> Key: "Commerce"
+│      "eat"     -> Key: "FOOD"  <-- BINGO!
+│
+├─> SCORING (Query × Key):
+│      Apple × "I"       = 5% relevance
+│      Apple × "bought"  = 15% relevance
+│      Apple × "eat"     = 80% relevance
+│
+└─> EXTRACT VALUE:
+    Take 80% of "eat's" VALUE (its raw math data about food)
+    Take 15% of "bought's" VALUE
+    Mix them together.
+    │
+    ▼
+
 **RESULT:** A brand new, transformed vector for APPLE. It is no longer generic. It is mathematically "weighted" towards food.
+
+--- 
 
 ### Why do we need THREE matrices? (The "Human" Catch)
 
@@ -104,4 +109,4 @@ But by forcing the words to pass through a Q matrix and a K matrix (which are ju
 
 ### SUMMARY
 
-In a database, a Query is what you search for, a Key is the tag, and the Value is the result. In a Transformer, a word uses its Query to ask the rest of the sentence a question. The other words use their Keys to answer. The system scores those answers, and the word uses those scores to extract the Values (the actual context) from the surrounding words, permanently changing its own meaning.
+*In a database, a Query is what you search for, a Key is the tag, and the Value is the result. In a Transformer, a word uses its Query to ask the rest of the sentence a question. The other words use their Keys to answer. The system scores those answers, and the word uses those scores to extract the Values (the actual context) from the surrounding words, permanently changing its own meaning.*
