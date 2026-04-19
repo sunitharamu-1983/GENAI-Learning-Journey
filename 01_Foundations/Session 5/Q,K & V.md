@@ -81,3 +81,18 @@ Let's focus purely on the word "**apple**" trying to figure out its own identity
              │
              ▼
 RESULT: A brand new, transformed vector for APPLE. It is no longer generic. It is mathematically "weighted" towards food.
+
+### Why do we need THREE matrices? (The "Human" Catch)
+
+You might be asking: "Why not just compare the words directly? Why force them to create Q, K, and V first?"
+
+This was a brilliant insight by the Google researchers. Think of Q, K, and V as different pairs of glasses.
+
+If you just compare the raw word "Apple" to the raw word "Eat", you only get one perspective.
+But by forcing the words to pass through a Q matrix and a K matrix (which are just learned weights/filters), the network can look at the words from multiple angles:
+
+- Maybe Q1 and K1 look for Grammatical relationships.
+- Maybe Q2 and K2 look for Emotional relationships.
+- Maybe Q3 and K3 look for Topic relationships (Food vs Tech).
+
+***This is why it's called Multi-Head Attention. It’s like having 8 different judges scoring the words from 8 different criteria before they pull from the Value (the prize).***
