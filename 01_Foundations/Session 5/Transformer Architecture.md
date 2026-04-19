@@ -51,13 +51,15 @@ The paper solved two massive problems at once:
 ### 🍎 The "Apple" Analogy: Static vs. Dynamic Embeddings
 
 **STATIC EMBEDDING (Pre-2017):**
+```
 [ Fruit Axis ]                    
-       4 |         (Cherry: 1,4)
-       3 |   (Orange: 0,3)
-       2 |        [Apple: 2,2] 
+       4 |        🍎 (Apple: 2,2) 
+       3 |   🍊 (Orange: 0,3)
+       2 |  🍒 (Cherry: 1,4)
        1 |
-         +------------------------ [ Tech Axis ]
-                            4 |  <Phone: 4,0>
+         +------------------- [ Tech Axis ]
+                            3 |  📱 (Phone: 4,0)
+```
 - Apple is stuck in the middle. It doesn't know if it's fruit or tech.
 
 **DYNAMIC TRANSFORMER EMBEDDING:**
