@@ -73,6 +73,7 @@ Sentence: "I bought apple to eat."
 
 ### 🔄 The Attention Math Flow (Step-by-Step)
 
+```
 INPUT WORD: "Apple"
      │
      ▼
@@ -92,6 +93,7 @@ INPUT WORD: "Apple"
      │
      ▼
 OUTPUT: New "Apple" vector, heavily influenced by "Eat".
+```
 
 ---
 
