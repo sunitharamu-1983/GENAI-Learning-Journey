@@ -28,13 +28,19 @@ The paper solved two massive problems at once:
 
 ### 📈 The NLP Evolution Timeline
 
-- [1954] BoW ───────────────────────────────────────────────▶ Simple counts, no meaning.
-- [1972] TF-IDF ────────────────────────────────────────────▶ Word importance based on frequency.
-- [2013] Word2Vec ──────────────────────────────────────────▶ Dense vectors, but STATIC meaning.
-- [2014] GloVe & Seq2Seq ───────────────────────────────────▶ Encoder/Decoder, but SEQUENTIAL bottleneck.
-- [2016] FastText ──────────────────────────────────────────▶ Sub-word embeddings.
-- [2017] TRANSFORMER ("Attention is All You Need") ─────────▶ PARALLEL processing + DYNAMIC context.
-- [2018+] BERT, GPT-1/2/3/4 ────────────────────────────────▶ The Modern LLM Era.
+```
+[1997] RNN  -----> Reads sequentially. Forgets early words.
+   │                 (Problem: Short memory)
+   ▼
+[1997] LSTM -----> Adds "gates" to remember important stuff.
+   │                 (Problem: Too slow, heavy computation)
+   ▼
+[2014] Seq2Seq --> Encoder reads, squeezes to 1 vector, Decoder writes.
+   │                 (Problem: Bottleneck. Squeezing a book into a tweet)
+   ▼
+[2017] TRANSFORMER -> Processes ALL words at once. Dynamic context.
+                      (Solution: Parallel + Attention Mechanism)
+```
 
 | Year | Milestone | Core Mechanism | The Fatal Flaw / Limitation |
 | :--- | :--- | :--- | :--- |
