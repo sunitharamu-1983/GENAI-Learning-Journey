@@ -1,5 +1,4 @@
 # Transformer Architecture
 
-```
-<img width="337" height="430" alt="image" src="https://github.com/user-attachments/assets/17be3d9e-a802-4874-b375-f0dbfa8c5e54" />
-```
+<img width="1152" height="648" alt="Transformer_Architecture" src="https://github.com/user-attachments/assets/177fccc2-7475-41c9-b078-b457afe8cbf8" />
+
