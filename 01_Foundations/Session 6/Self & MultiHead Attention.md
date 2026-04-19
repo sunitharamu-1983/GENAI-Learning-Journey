@@ -90,4 +90,7 @@ So, you hire a committee:
 
 ### Summary
 
+- **Stop getting lost in the math of Multi-Head.** When Noordeen or an interviewer talks about "8 heads of attention," do not think "8 complicated math equations." Think "8 different pairs of glasses." The math is literally the exact same Q, K, V multiplication we did earlier. You just run the same equation 8 times with different starting numbers (weights).
+- **Understand the "Why" of the architecture:** If ChatGPT only used Single-Head Self-Attention, it would be a boring robot. It would know that "Bank" means money, but it wouldn't grasp poetry, sarcasm, or complex logic. Multi-Head is what gives LLMs their depth. It’s the difference between a high schooler summarizing a book (Single-Head) and a literature professor analyzing it (Multi-Head).
+
 *Self-Attention is the base mechanism where words use Q, K, and V to find context within their own sentence. Multi-Head Attention is simply running that exact same process multiple times in parallel—like having 8 different analysts look at the same data for different patterns—and then combining their outputs so the model captures grammar, semantics, and context all at once.*
