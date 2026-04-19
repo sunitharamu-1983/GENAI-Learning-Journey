@@ -32,36 +32,37 @@ Let's use the sentence your instructor used:
 
 Let's focus purely on the word "**apple**" trying to figure out its own identity.
 
-- **Step 1:** The Query (What am I looking for?)
-  The word "apple" is confused. Am I a fruit? Am I a tech company?
-  So, "apple" generates a Query.
+**Step 1:** The Query (What am I looking for?)
+The word "apple" is confused. Am I a fruit? Am I a tech company?
+So, "apple" generates a Query.
 
-  Think of the Query as "apple" holding up a sign that says: "Hey room! Is anyone here talking about food?"
+Think of the Query as "apple" holding up a sign that says: "Hey room! Is anyone here talking about food?"
 
-- **Step 2:** The Keys (What do you claim to be?)
-  Every other word in the sentence generates a Key.
+**Step 2:** The Keys (What do you claim to be?)
+Every other word in the sentence generates a Key.
 
-  "I" holds up a sign: "I am a pronoun."
-  "bought" holds up a sign: "I am a transaction."
-  "eat" holds up a sign: "I am an action related to food."
+"I" holds up a sign: "I am a pronoun."
+"bought" holds up a sign: "I am a transaction."
+"eat" holds up a sign: "I am an action related to food."
 
-- **Step 3:** The Dot Product (Matching signs)
-  The system takes Apple's Query ("Anyone talking about food?") and multiplies it by everyone's Key.
+**Step 3:** The Dot Product (Matching signs)
+The system takes Apple's Query ("Anyone talking about food?") and multiplies it by everyone's Key.
 
-  Apple's Query × "I's" Key = Low Score (0%)
-  Apple's Query × "bought's" Key = Medium Score (20%)
-  Apple's Query × "eat's" Key = High Score (80%)
+Apple's Query × "I's" Key = Low Score (0%)
+Apple's Query × "bought's" Key = Medium Score (20%)
+Apple's Query × "eat's" Key = High Score (80%)
 
-- **Step 4:** The Value (The actual influence)
-  This is where the magic happens.
-  "eat" doesn't just have a Key (a sign saying "I am food"). "eat" has a Value—which is its actual mathematical vector containing deep, rich
-  information about consuming food.
+**Step 4:** The Value (The actual influence)
+This is where the magic happens.
+"eat" doesn't just have a Key (a sign saying "I am food"). "eat" has a Value—which is its actual mathematical vector containing deep, rich
+information about consuming food.
 
-  ***The system takes Apple's score for "eat" (80%) and says: "Okay Apple, take 80% of 'eat's mathematical Value and absorb it into yourself."***
+***The system takes Apple's score for "eat" (80%) and says: "Okay Apple, take 80% of 'eat's mathematical Value and absorb it into yourself."***
 
 ---
 
 ### Text Infographic - The Apple Transformation
+
 ```
 SENTENCE: "I bought an [APPLE] to eat."
 
@@ -85,6 +86,7 @@ SENTENCE: "I bought an [APPLE] to eat."
     Mix them together.
     │
     ▼
+```
 
 **RESULT:** A brand new, transformed vector for APPLE. It is no longer generic. It is mathematically "weighted" towards food.
 
