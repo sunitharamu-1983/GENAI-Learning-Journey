@@ -1,5 +1,7 @@
 # Q, K & V Metrices
 
+--- 
+
 Imagine you go to Google.
 
 - **Query (Q):** You type something into the search bar. "Best Italian restaurants near me." The Query is what you want to know.
@@ -80,7 +82,7 @@ Let's focus purely on the word "**apple**" trying to figure out its own identity
              Mix them together.
              │
              ▼
-RESULT: A brand new, transformed vector for APPLE. It is no longer generic. It is mathematically "weighted" towards food.
+**RESULT:** A brand new, transformed vector for APPLE. It is no longer generic. It is mathematically "weighted" towards food.
 
 ### Why do we need THREE matrices? (The "Human" Catch)
 
@@ -96,3 +98,9 @@ But by forcing the words to pass through a Q matrix and a K matrix (which are ju
 - Maybe Q3 and K3 look for Topic relationships (Food vs Tech).
 
 ***This is why it's called Multi-Head Attention. It’s like having 8 different judges scoring the words from 8 different criteria before they pull from the Value (the prize).***
+
+---
+
+### SUMMARY
+
+In a database, a Query is what you search for, a Key is the tag, and the Value is the result. In a Transformer, a word uses its Query to ask the rest of the sentence a question. The other words use their Keys to answer. The system scores those answers, and the word uses those scores to extract the Values (the actual context) from the surrounding words, permanently changing its own meaning.
