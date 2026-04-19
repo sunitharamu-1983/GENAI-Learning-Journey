@@ -86,7 +86,7 @@ RESULT: A brand new, transformed vector for APPLE. It is no longer generic. It i
 
 You might be asking: "Why not just compare the words directly? Why force them to create Q, K, and V first?"
 
-This was a brilliant insight by the Google researchers. Think of Q, K, and V as different pairs of glasses.
+***This was a brilliant insight by the Google researchers. Think of Q, K, and V as different pairs of glasses.***
 
 If you just compare the raw word "Apple" to the raw word "Eat", you only get one perspective.
 But by forcing the words to pass through a Q matrix and a K matrix (which are just learned weights/filters), the network can look at the words from multiple angles:
