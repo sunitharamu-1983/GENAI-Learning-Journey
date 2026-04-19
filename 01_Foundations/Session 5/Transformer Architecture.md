@@ -1,5 +1,4 @@
-# 📅 Meeting Summary: GEN AI Batch - April 18, 2026
-**Time:** 2:46 AM - 6:46 AM (4 Hours) | **Instructor:** Mohamed Noordeen
+# Transformer Architecture - Part 1
 
 The session was dedicated to deconstructing the 2017 Google paper "Attention is All You Need," highlighting Indian contributions (Ashish Vaswani) and tracing the historical necessity of this invention.
 
