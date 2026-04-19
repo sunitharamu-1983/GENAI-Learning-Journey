@@ -10,6 +10,7 @@ The session was dedicated to deconstructing the 2017 Google paper "Attention is 
 4. **Seq2Seq (Sequence-to-Sequence):** Uses an Encoder-Decoder LSTM setup. Fatal Flaw: The "Bottleneck Problem." It squeezes a 500-word input into one fixed-size "context vector" before the decoder can start. It processes sequentially (no parallelization) and loses early word context.
 
 ### 🚀 The Transformer Breakthrough (2017)
+
 The paper solved two massive problems at once:
 
 1. **Parallelization:** Processes all words simultaneously instead of sequentially (massive speed increase).
