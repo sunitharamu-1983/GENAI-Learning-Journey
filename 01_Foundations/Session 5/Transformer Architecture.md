@@ -36,6 +36,18 @@ The paper solved two massive problems at once:
 - [2017] TRANSFORMER ("Attention is All You Need") ─────────▶ PARALLEL processing + DYNAMIC context.
 - [2018+] BERT, GPT-1/2/3/4 ────────────────────────────────▶ The Modern LLM Era.
 
+| Year | Milestone | Core Mechanism | The Fatal Flaw / Limitation |
+| :--- | :--- | :--- | :--- |
+| **1954** | **Bag of Words (BoW)** | Counted frequency of words in a document. | Threw away word order completely. "Dog bit man" = "Man bit dog". |
+| **1972** | **TF-IDF** | Penalized common words, highlighted unique terms. | Still just counting. No understanding of *context* or *semantics*. |
+| **2013** | **Word2Vec** | Mapped words to dense mathematical vectors. | **Static Embeddings:** "Apple" (fruit) and "Apple" (company) shared the *exact same* vector. |
+| **2014** | **GloVe** | Global vectors for word representation. | Same static embedding issue as Word2Vec. |
+| **2014** | **Seq2Seq** | Used LSTMs in an *Encoder* (reads) and *Decoder* (writes) setup. | **The Bottleneck:** Squeezed a 500-word input into a *single* fixed-size vector before the decoder could start. Lost early context. |
+| **1997/2014** | **RNN / LSTM / GRU** | Tracked sequence/memory using hidden states. | **Sequential:** Had to process Word 1, then Word 2, then Word 3. Impossible to parallelize on GPUs. |
+| **2017** | **Transformer** | **Self-Attention Mechanism** (Q, K, V matrices). | *None of the above.* It processes all words simultaneously and shifts vectors dynamically based on surrounding words. |
+
+---
+
 ### 🍎 The "Apple" Analogy: Static vs. Dynamic Embeddings
 
 **STATIC EMBEDDING (Pre-2017):**
