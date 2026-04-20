@@ -37,7 +37,7 @@ S3 - "Mango is a seasonal fruit"
 
 *Thus you get the bag of words as an embedding, raw data. No meaning. Love is there in S1 and S2. But what meaning or context can be inferred? Practically - None. It helped you classify the document, by representing the document/sentences as vectors.* 
 
-## Problems in BOW
+### Problems in BOW
 
 1. No meaning can be derived. I can love mango and mango is a seasonal fruit and that need not imply that I love any seasonal fruit.
 2. Order doesn't matter here.
@@ -47,3 +47,124 @@ S3 - "Mango is a seasonal fruit"
 **Summary:** *BOW is an embedding with just numbers obtained by counting, its a good start - but it's blind to meaning, order, importance.*
 
 ---
+
+## Term Frequency - Inverse Document Frequency (TF-IDF) Embedding
+
+Term Frequency (TF) and Inverse Document Frequency (IDF) helps to overcome problem 4 of BOW - **IMPORTANCE**. That is: Words which appear across multiple sentences in a document will not be unique or will not be given a higher importance as its not rare. Words which has an overall higher TF-IDF score, will be termed important & rare in the embedding. 
+
+```
+Example: Let's say you have 3 sentences.
+
+S1 - "I love India" 
+S2 - "I love Mango" 
+S3 - "Mango is a seasonal fruit"
+```
+### Part 1 — TF (Term Frequency)
+This is essentially BOW — just counting how many times a word appears in a document. But instead of raw count, we normalise it:
+```
+The formula is: TF = (Number of times word appears in document) / (Total words in document)
+```
+So, 
+S2 = "I love Mango" — 3 words total
+TF of "Mango" in S2 = 1/3 = 0.33 (Simple) 
+
+*But **TF alone** still has BOW's Problem 4 — "is" and "a" would still score high if they appear often.*
+
+### Part 2 — IDF (Inverse Document Frequency)
+This is where TF-IDF gets smart. **The idea is:** If a word appears in every document — it's probably not important. If a word appears in very few documents — it's probably important, very important or even rare. 
+```
+The formula is: IDF = log(Total number of documents / Number of documents containing the word)
+```
+So, 
+```
+Word                  How many times?                        IDF
+-----------------------------------------------------------------------
+I                            2/3                       log(3/2) = 0.17
+love                         2/3                       log(3/2) = 0.17
+Mango                        1/3                       log(3/1) = 0.48
+India                        1/3                       log(3/1) = 0.48
+is                           1/3                       log(3/1) = 0.48
+a                            1/3                       log(3/1) = 0.48
+seasonal                     1/3                       log(3/1) = 0.48
+fruit                        1/3                       log(3/1) = 0.48
+```
+From this, not just "seasonal" & "fruit" - "is" and "a" in this example corpus seems to be important words. This is with respect to just IDF for this corpus. 
+
+### Example Calculation - TFxIDF
+
+Now - Lets do a TF x IDF, the aggregated score for the example corpus
+
+```
+Step 1 — Calculate TF for each word in each sentence
+TF = Word count in sentence / Total words in sentence
+
+Word                    S1                    S2                    S3                                      
+------------------------------------------------------------------------------
+I                       1/3 = 0.33            1/3 = 0.33            0
+love                    1/3 = 0.33            1/3 = 0.33            0
+India                   1/3 = 0.33            0                     0
+Mango                   0                     1/3 = 0.33            1/5 = 0.20
+is                      0                     1/3 = 0.33            1/5 = 0.20
+a                       0                     1/3 = 0.33            1/5 = 0.20
+seasonal                0                     1/3 = 0.33            1/5 = 0.20
+fruit                   0                     1/3 = 0.33            1/5 = 0.20
+```
+
+```
+Step 2 — Calculate IDF for each word
+IDF = log(Total documents / Documents containing the word)
+
+Word                    Appears in how many sentences                  IDF = log(3/n)                                    
+--------------------------------------------------------------------------------------
+I                       2 (S1, S2)                                     log(3/2) = 0.18
+love                    2 (S1, S2)                                     log(3/2) = 0.18
+India                   1 (S1)                                         log(3/1) = 0.48
+Mango                   2 (S2, S3)                                     log(3/2) = 0.18
+is                      1 (S3)                                         log(3/1) = 0.48
+a                       1 (S3)                                         log(3/1) = 0.48
+seasonal                1 (S3)                                         log(3/1) = 0.48
+fruit                   1 (S3)                                         log(3/1) = 0.48
+```
+
+```
+Step 3: TF x IDF = Aggregated Scores
+
+S1 = "I love India"
+Word                    TF              IDF              TFxIDF
+------------------------------------------------------------------
+I                       0.33            0.18             0.0594
+love                    0.33            0.18             0.0594
+India                   0.33            0.48             0.158
+
+"India" scores the highest - Appears only once
+
+
+S2 = "I love Mango"
+Word                    TF              IDF              TFxIDF
+------------------------------------------------------------------
+I                       0.33            0.18             0.0594
+love                    0.33            0.18             0.0594
+Mango                   0.33            0.18             0.0594
+
+No unique words
+
+S3 = "Mango is a seasonal fruit"
+Word                    TF              IDF              TFxIDF
+------------------------------------------------------------------
+Mango                   0.20            0.18             0.036
+is                      0.20            0.48             0.096
+a                       0.20            0.48             0.096
+seasonal                0.20            0.48             0.096
+fruit                   0.20            0.48             0.096
+
+"Seasonal" & "Fruit" scores the highest - Appears only once
+```
+***Insight: TF-IDF has mathematically confirmed that "India" is the soul of S1, and "seasonal" and "fruit" are the soul of S3 — without anyone telling it so.***
+
+So, when this pattern is applied to a bigger corpus lets say with 50,000 tokens - the TF-IDF score will give an embedding with high scores for the important items. 
+
+### Problems in TF-IDF
+
+1. No meaning can be derived. I can love mango and mango is a seasonal fruit and that need not imply that I love any seasonal fruit.
+2. Order doesn't matter here.
+3. If the sentence is small, the vector is manageable. Imagine a vocabulary with 50,000 words. Multiple vectors are built with majority 0s. This is called a **sparse vector** and is computationally expensive and inefficient.
