@@ -10,6 +10,21 @@ v7 - 2023
 
 ---
 
+### Q, K & V Metrices
+
+Before we talk about Self Head and Multi head attention, it is imperative to explain the Q, K & V Metrices. 
+```
+Example Sentence: "I bought an apple to eat"
+```
+- Every word in the sentence has its own Q, K & V Vectors.
+- Q - Query, K - Keys, V - Values
+- Q holds the question, K is the answer key and V is the actual answer.
+
+- So when we compute attention for Apple, we take Apple's Q and score it against the K of every other word — including itself. The result tells us how much attention Apple should pay to each word.
+- The scoring is NOT cosine similarity — it's called the scaled dot product. Softmax(Q·K / √dk) × V — uses a scaled dot product, not cosine similarity. Cosine similarity also measures angular closeness, so there is a possibility of it pushing the values far off too. This is why we divide by the square root of dimensions to ensure that we aren't too far off or do not push into tiny gradients.
+- The V matrix is not "built after" the dot product of Q & K. V is derived independently — just like Q and K, it comes from multiplying the input embedding by its own learned weight matrix (Wv). The dot product of Q & K only produces the attention scores (the weights). Those weights are then applied to V to produce the final output.
+- Every single word in the sentence attends to every other word including itself to get accurate weights so that no word is skipped or treated less important. 
+
 ### Encoder Stack
 
 1. **Input Raw data** is tokenized, Converted to vector & positional encoding is added to obtain the final embedding. This final embedding will be sent as an input to the Encoder Stack.
