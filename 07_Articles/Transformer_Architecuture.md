@@ -1,4 +1,4 @@
-### Transformer Architecture
+# Transformer Architecture
 
 ***The class explained the Transformer architecture, with the "Monalisa of the AI" diagram with the Encoder and Decoder stack.***
 
