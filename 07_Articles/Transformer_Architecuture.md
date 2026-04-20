@@ -10,7 +10,7 @@ v7 - 2023
 
 ---
 
-### Q, K & V Metrices
+### Q, K & V Metrices & Self Attention
 
 Before we talk about Self Head and Multi head attention, it is imperative to explain the Q, K & V Metrices. 
 ```
