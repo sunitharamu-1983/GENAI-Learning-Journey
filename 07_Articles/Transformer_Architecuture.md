@@ -15,6 +15,7 @@
 7. The representation from Feed forward layer is then sent to the ADD & NORM layer once again and the final representation (**contextual representation**) is then available as the output from the Encoder.
 
 ```
-- The Encoder stack isn't just one encoder — it's N encoders stacked (typically 6 in the original "Attention Is All You Need" paper).
+- The Encoder stack isn't just one encoder — it's N encoders stacked
+        - Typically 6 in the original "Attention Is All You Need" paper
 - The output of one feeds into the next, progressively refining the representation.
 ```
