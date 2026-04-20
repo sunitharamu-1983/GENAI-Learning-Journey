@@ -19,3 +19,20 @@
         - Typically 6 in the original "Attention Is All You Need" paper
 - The output of one feeds into the next, progressively refining the representation.
 ```
+
+---
+
+### Decoder Understanding:
+
+1. **The decoder** starts with the output embeddings (the words it has transformed so far). These are shifted one position to the right and the Positional encoding is then added to it.
+2. This data then goes into **Masked Multi-Head attention block**. The masking ensures that when the model is predicting the word i, it sees the words that came before it (positions less than i) so that it does not "cheat" by reading the rest of the sentence. (*Multi head attention will be explained below*)
+3. Just like the encoder, every sublayer in the decoder is immediately followed by an **Add & Layer Normalization** (*explained in the encoder stack*)
+4. **Encoder Decoder Attention layer** - this is where the encoder output is taken as input by the decoder.
+        - Queries (Q) = Come from the previous decoder layer
+        - Keys (K) and Values (V) metrices come from the Encoder output.
+        - This allows the decoder to attend to the entire sentence while it decides which word to write next.
+5. After this, the data flows to another **Add & Norm** and then to the **Position wise feed forward network** and then another **Add & Norm layer**.
+6. The decoder stack similar to encoder stack **happens 6 times** too and the final output coming out is passed through Linear transformation and the softmax function.
+        - The softmax produces a probability distribution over the entire vocabulary. The model then picks the word with the highest probability or uses additional           strategies if it needs to pick multiple options. 
+
+**Summary:** *The decoder uses what its written so far, masks the future, looks back at encoder's thinking to stay in the lane, processes it and uses the softmax ranking to pick the next word.*
