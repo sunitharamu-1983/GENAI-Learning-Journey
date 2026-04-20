@@ -2,6 +2,12 @@
 
 ***The class explained the Transformer architecture, with the "Monalisa of the AI" diagram with the Encoder and Decoder stack.***
 
+```
+Paper Used: Attention is All You Need
+v1 - 2017
+v7 - 2023
+```
+
 ---
 
 ### Encoder Stack
