@@ -21,7 +21,7 @@ Example Sentence: "I bought an apple to eat"
 - Q holds the question, K is the answer key and V is the actual answer.
 
 - So when we compute attention for Apple, we take Apple's Q and score it against the K of every other word — including itself. The result tells us how much attention Apple should pay to each word.
-- The scoring is NOT cosine similarity — it's called the scaled dot product. Softmax(Q·K / √dk) × V — uses a scaled dot product, not cosine similarity. Cosine similarity also measures angular closeness, so there is a possibility of it pushing the values far off too. This is why we divide by the square root of dimensions to ensure that we aren't too far off or do not push into tiny gradients.
+- The scoring is NOT cosine similarity — it's called the scaled dot product. Softmax(Q·K / √dk) × V — uses a scaled dot product, not cosine similarity. Cosine similarity also measures angular closeness. Cosine similarity ignores magnitude — it only cares about the direction/angle between two vectors. In Transformers, magnitude carries meaningful information. A word that is strongly relevant should produce a large dot product value — and that "loudness" matters when computing attention weights. If you normalize it away like cosine similarity does, you lose that signal. Hence we divide by the square root of dimensions to ensure that we aren't too far off or do not push into tiny gradients.
 - The V matrix is not "built after" the dot product of Q & K. V is derived independently — just like Q and K, it comes from multiplying the input embedding by its own learned weight matrix (Wv). The dot product of Q & K only produces the attention scores (the weights). Those weights are then applied to V to produce the final output.
 - Every single word in the sentence attends to every other word including itself to get accurate weights so that no word is skipped or treated less important.
 
@@ -30,7 +30,7 @@ Example Sentence: "I bought an apple to eat"
 - Running the Self-Attention mechanism multiple times (usually 8 or 16 times) in parallel, but using different sets of Q, K, and V weight matrices each time.
 - Single Self-Attention might only capture one type of relationship (e.g., "Apple" and "eat" are both about food). But what about grammar? What about tone? A single pass misses nuances.
 - Instead of one final vector per word, you get 8 different vectors per word (may be representing grammar, topic, emotion, etc.), which are squashed together to create a super-vector that captures everything.
-- What it learns, such as grammar, tone, emotional context is all dependent on the self attention happening in parallely. 
+- What it learns, such as grammar, tone, emotional context is all dependent on the self attention happening parallelly. 
 
 ### What is Squashing?
 
@@ -48,9 +48,9 @@ Example Sentence: "I bought an apple to eat"
 2. **Encoder** takes this input, runs self attention parallelly with 8 heads (multi head attention) [explained above] and this gives a continuous representation. **Point to Note -** Self attention is performed as Softmax (Dot Product (Q.K / Sq.rt (Dimension) (dk)) x V.
 3. This continuous representation is sent through an **Add & Norm layer**. Addition layer is placed to solve the vanishing gradient problem. This is by residual addition from the input vector.
     - The residual connection shortens the effective gradient path because it bypasses layers — so it's one mechanism solving one core problem.
-5. **Normalization** performs a layer normalization, to ensure that the numbers are not off scale and are manageable.
-6. The data from this **ADD & NORM layer** is then fed to the feed forward layer. This is done by expanding the embedding to a higher dimension from 512 to 2048 to ensure to capture all the patterns and then contracted again.This can be represented as **(512 → 2048 → 512)**.
-7. The representation from Feed forward layer is then sent to the ADD & NORM layer once again and the final representation (**contextual representation**) is then available as the output from the Encoder.
+4. **Normalization** performs a layer normalization, to ensure that the numbers are not off scale and are manageable.
+5. The data from this **ADD & NORM layer** is then fed to the feed forward layer. This is done by expanding the embedding to a higher dimension from 512 to 2048 to ensure to capture all the patterns and then contracted again.This can be represented as **(512 → 2048 → 512)**.
+6. The representation from Feed forward layer is then sent to the ADD & NORM layer once again and the final representation (**contextual representation**) is then available as the output from the Encoder.
 
 ```
 - The Encoder stack isn't just one encoder — it's N encoders stacked
