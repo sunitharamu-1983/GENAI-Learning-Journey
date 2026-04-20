@@ -31,6 +31,16 @@ Example Sentence: "I bought an apple to eat"
 - Single Self-Attention might only capture one type of relationship (e.g., "Apple" and "eat" are both about food). But what about grammar? What about tone? A single pass misses nuances.
 - Instead of one final vector per word, you get 8 different vectors per word (may be representing grammar, topic, emotion, etc.), which are squashed together to create a super-vector that captures everything.
 - What it learns, such as grammar, tone, emotional context is all dependent on the self attention happening in parallely. 
+
+### What is Squashing?
+
+- The multiple vectors (assuming 8 or 16) are first concatenated (joined end to end) and then multiplied by a learned weight matrix (Wo) to project them back to the original dimension. (Can be 512 or so)
+
+### Notable Detail
+
+- If the model dimension is 512 and there are 8 heads, each head works with 512/8 = 64 dimensions, not the full 512. So the total computation stays manageable.
+
+---
   
 ### Encoder Stack
 
