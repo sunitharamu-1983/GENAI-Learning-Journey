@@ -74,3 +74,22 @@ Example Sentence: "I bought an apple to eat"
         - The softmax produces a probability distribution over the entire vocabulary. The model then picks the word with the highest probability or uses additional           strategies if it needs to pick multiple options. 
 
 **Summary:** *The decoder uses what its written so far, masks the future, looks back at encoder's thinking to stay in the lane, processes it and uses the softmax ranking to pick the next word.*
+
+---
+
+### Layman Explanation of the Architecture
+
+***Scenario: Assume that you are the Senior Project manager and you have a task where a forecast for the backlog is asked for the upcoming quarter. Assume you have 8 leads reporting to you.***
+
+1. You assign the task to the 8 leads and tell them just that, "Need the forecast for backlog reduction by 9 AM ET today". That is all. No other inputs. (**Multi-head attention with 8 heads**)
+
+2. The leads start off by assigning roles and responsibilities of how they plan to do it and begin doing it and identify the data accordingly (**Each head learns unique Q, K, V matrices**)
+
+3. The forecast is ready by 9 AM ET (**Parallel forward pass**)
+
+4. You consolidate this into a final backlog forecast report (**Concatenation + linear transformation**)
+
+5. Post the submission of the forecast, the leads are told that the forecast seems off and non - achievable, They brainstorm to understand where they went wrong by referring a lot of past forecasts and methods used and refine the data and finish the final forecast again for submission. (**Back Propagation**)
+
+6. Leads deliver the final forecast confidently & You submit the reviewed report to the leadership. (**Inference**)
+
