@@ -41,6 +41,15 @@ Example Sentence: "I bought an apple to eat"
 - If the model dimension is 512 and there are 8 heads, each head works with 512/8 = 64 dimensions, not the full 512. So the total computation stays manageable.
 
 ---
+
+### Positional encoding
+
+- Remember the big win of the Transformer? Self-Attention processes all words at the exact same time (in parallel). Because it processes them all in a single flash, the model has no idea what order the words are in.
+- To a basic Transformer, "The dog bit the man" and "The man bit the dog" look mathematically identical. The Word2Vec for "dog" and "man" are the same in both sentences. If you don't know the order, the meaning is destroyed.
+- Before the words enter the Self-Attention mechanism, we literally add a unique set of numbers (a vector) to each word's Word2Vec embedding.
+- The word "dog" now has its original meaning numbers plus a new set of numbers that scream "I AM THE SECOND WORD IN THIS SENTENCE!"
+  
+- **Why do they use weird sine/cosine wave formulas for this?** Because sine waves repeat predictably. By using waves of different speeds (frequencies), the model can easily mathematically calculate the distance between any two words (e.g., "Word A is 3 words away from Word B"). With numbers the relative distance cannot be obtained, but with the sine waves, which goes up and down, the relative distances can be obtained. 
   
 ### Encoder Stack
 
