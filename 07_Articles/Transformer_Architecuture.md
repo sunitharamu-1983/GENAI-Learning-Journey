@@ -23,8 +23,15 @@ Example Sentence: "I bought an apple to eat"
 - So when we compute attention for Apple, we take Apple's Q and score it against the K of every other word — including itself. The result tells us how much attention Apple should pay to each word.
 - The scoring is NOT cosine similarity — it's called the scaled dot product. Softmax(Q·K / √dk) × V — uses a scaled dot product, not cosine similarity. Cosine similarity also measures angular closeness, so there is a possibility of it pushing the values far off too. This is why we divide by the square root of dimensions to ensure that we aren't too far off or do not push into tiny gradients.
 - The V matrix is not "built after" the dot product of Q & K. V is derived independently — just like Q and K, it comes from multiplying the input embedding by its own learned weight matrix (Wv). The dot product of Q & K only produces the attention scores (the weights). Those weights are then applied to V to produce the final output.
-- Every single word in the sentence attends to every other word including itself to get accurate weights so that no word is skipped or treated less important. 
+- Every single word in the sentence attends to every other word including itself to get accurate weights so that no word is skipped or treated less important.
 
+### Multi-Head Attention
+
+- Running the Self-Attention mechanism multiple times (usually 8 or 16 times) in parallel, but using different sets of Q, K, and V weight matrices each time.
+- Single Self-Attention might only capture one type of relationship (e.g., "Apple" and "eat" are both about food). But what about grammar? What about tone? A single pass misses nuances.
+- Instead of one final vector per word, you get 8 different vectors per word (may be representing grammar, topic, emotion, etc.), which are squashed together to create a super-vector that captures everything.
+- What it learns, such as grammar, tone, emotional context is all dependent on the self attention happening in parallely. 
+  
 ### Encoder Stack
 
 1. **Input Raw data** is tokenized, Converted to vector & positional encoding is added to obtain the final embedding. This final embedding will be sent as an input to the Encoder Stack.
