@@ -27,14 +27,14 @@ Example Sentence: "I bought an apple to eat"
 
 ### Multi-Head Attention
 
-- Running the Self-Attention mechanism multiple times (usually 8 or 16 times) in parallel, but using different sets of Q, K, and V weight matrices each time.
+- Running the Self-Attention mechanism multiple times (usually 8) in parallel, but using different sets of Q, K, and V weight matrices each time.
 - Single Self-Attention might only capture one type of relationship (e.g., "Apple" and "eat" are both about food). But what about grammar? What about tone? A single pass misses nuances.
 - Instead of one final vector per word, you get 8 different vectors per word (may be representing grammar, topic, emotion, etc.), which are squashed together to create a super-vector that captures everything.
 - What it learns, such as grammar, tone, emotional context is all dependent on the self attention happening parallelly. 
 
 ### What is Squashing?
 
-- The multiple vectors (assuming 8 or 16) are first concatenated (joined end to end) and then multiplied by a learned weight matrix (Wo) to project them back to the original dimension. (Can be 512 or so)
+- The multiple vectors (assuming 8) are first concatenated (joined end to end) and then multiplied by a learned weight matrix (Wo) to project them back to the original dimension. (Can be 512 or so)
 
 ### Notable Detail
 
@@ -46,7 +46,7 @@ Example Sentence: "I bought an apple to eat"
 
 - Remember the big win of the Transformer? Self-Attention processes all words at the exact same time (in parallel). Because it processes them all in a single flash, the model has no idea what order the words are in.
 - To a basic Transformer, "The dog bit the man" and "The man bit the dog" look mathematically identical. The Word2Vec for "dog" and "man" are the same in both sentences. If you don't know the order, the meaning is destroyed.
-- Before the words enter the Self-Attention mechanism, we literally add a unique set of numbers (a vector) to each word's Word2Vec embedding.
+- Before the words enter the Self-Attention mechanism, we literally add a unique set of numbers (a vector) to each word's token embedding.
 - The word "dog" now has its original meaning numbers plus a new set of numbers that scream "I AM THE SECOND WORD IN THIS SENTENCE!"
   
 - **Why do they use weird sine/cosine wave formulas for this?** Because sine waves repeat predictably. By using waves of different speeds (frequencies), the model can easily mathematically calculate the distance between any two words (e.g., "Word A is 3 words away from Word B"). With numbers the relative distance cannot be obtained, but with the sine waves, which goes up and down, the relative distances can be obtained. 
@@ -98,7 +98,7 @@ Example Sentence: "I bought an apple to eat"
 
 4. You consolidate this into a final backlog forecast report (**Concatenation + linear transformation**)
 
-5. Post the submission of the forecast, the leads are told that the forecast seems off and non - achievable, They brainstorm to understand where they went wrong by referring a lot of past forecasts and methods used and refine the data and finish the final forecast again for submission. (**Back Propagation**)
+5. Post the submission of the forecast, the leads are told that the forecast seems off and non - achievable, They brainstorm to understand where they went wrong by referring a lot of past forecasts and methods used and refine the data and finish the final forecast again for submission. (**Training Loop**)
 
 6. Leads deliver the final forecast confidently & You submit the reviewed report to the leadership. (**Inference**)
 
