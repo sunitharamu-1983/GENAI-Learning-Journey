@@ -13,7 +13,7 @@ v7 - 2023
 ### Encoder Stack
 
 1. **Input Raw data** is tokenized, Converted to vector & positional encoding is added to obtain the final embedding. This final embedding will be sent as an input to the Encoder Stack.
-2. **Encoder** takes this input, runs self attention parallelly with 8 heads (multi head attention) [Will be explained below] and this gives a continuous representation. **Point to Note -** Self attention is performed as Softmax (Dot Product (Q.K / Sq.rt (Dimension) (dk)) x V.
+2. **Encoder** takes this input, runs self attention parallelly with 8 heads (multi head attention) [explained above] and this gives a continuous representation. **Point to Note -** Self attention is performed as Softmax (Dot Product (Q.K / Sq.rt (Dimension) (dk)) x V.
 3. This continuous representation is sent through an **Add & Norm layer**. Addition layer is placed to solve the vanishing gradient problem. This is by residual addition from the input vector.
     - The residual connection shortens the effective gradient path because it bypasses layers — so it's one mechanism solving one core problem.
 5. **Normalization** performs a layer normalization, to ensure that the numbers are not off scale and are manageable.
@@ -31,7 +31,7 @@ v7 - 2023
 ### Decoder Understanding:
 
 1. **The decoder** starts with the output embeddings (the words it has transformed so far). These are shifted one position to the right and the Positional encoding is then added to it.
-2. This data then goes into **Masked Multi-Head attention block**. The masking ensures that when the model is predicting the word i, it sees the words that came before it (positions less than i) so that it does not "cheat" by reading the rest of the sentence. (*Multi head attention will be explained below*)
+2. This data then goes into **Masked Multi-Head attention block**. The masking ensures that when the model is predicting the word i, it sees the words that came before it (positions less than i) so that it does not "cheat" by reading the rest of the sentence. (*explained above*)
 3. Just like the encoder, every sublayer in the decoder is immediately followed by an **Add & Layer Normalization** (*explained in the encoder stack*)
 4. **Encoder Decoder Attention layer** - this is where the encoder output is taken as input by the decoder.
         - Queries (Q) = Come from the previous decoder layer
