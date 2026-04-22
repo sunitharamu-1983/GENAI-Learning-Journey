@@ -311,3 +311,7 @@ Human involved?|❌ No — self supervised|✅ Yes — real conversation
 1. "Apple" the fruit and "Apple" the company get the same vector — Word2Vec has one vector per word regardless of context.
 2. Requires Large Corpus
 3. Once trained, vectors never change — "bank" always means the same thing regardless of context
+
+---
+
+**In Conclusion: "Word2Vec was a giant leap — but it had one blind spot. A word like "Apple" always meant the same thing regardless of whether you were talking about fruit or technology. Fixing that blind spot is where GloVe and FastText come in — and that's a story for Part 2."**
