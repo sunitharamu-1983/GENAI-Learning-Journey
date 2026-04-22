@@ -2,7 +2,7 @@
 
 ---
 
-## What are embeddings? 
+## What are Embeddings? 
 Computers do not understand words and can only fathom numbers. For the computer to begin making sense of what you say, everything must be converted from words to numbers and that conversion is called an embedding.
 
 ## What is a vector? 
