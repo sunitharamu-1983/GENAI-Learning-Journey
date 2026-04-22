@@ -306,4 +306,4 @@ Human involved?|❌ No — self supervised|✅ Yes — real conversation
 4. By building this way, after millions of sentences, "India" / "Mango" can all get nudged into the neighbourhood of "Country", "Season", "food", "likeable", "desirable" and so on.
 5. Skip-Grams are bidirectional too, if you take "Mango" - can predict, "is"/"a" or if "is" - can predict, "Mango" "a"
 
-***Analogy: N-Grams are neighbours who must share a wall. Skip-Gram are neighbours who can live a few houses apart and still know each other. ***
+***Analogy: N-Grams are neighbours who must share a wall. Skip-Gram are neighbours who can live a few houses apart and still know each other.***
