@@ -187,6 +187,7 @@ There are two approaches to Word2Vec.
 1. Continous Bag of Words (CBOW)
 2. SkipGram
 
+#### Continuous Bag of Words (CBOW):
 Before we get into the approach details, let us understand if BOW and CBOW are the same or different. 
 
 ***Summary: They are two different concepts. BOW is standalone embedding technique and the CBOW is one among the Word2Vec approaches.***
@@ -204,7 +205,7 @@ S2 — "I love Mango"
 S3 — "Mango is a seasonal fruit"
 
 
-### How CBOW works — Step by Step
+#### How CBOW works — Step by Step
 
 CBOW uses a context window, a fixed number of words on either side of the target word. Let's use a window of 1 (one word on each side) for simplicity.
 
@@ -216,7 +217,7 @@ S2 - "I love Mango"
 S3 - "Mango is a seasonal fruit"
 ```
 
-#### Working through S3 — "Mango is a seasonal fruit"
+##### Working through S3 — "Mango is a seasonal fruit"
 CBOW slides through the sentence and creates training pairs like this:
 
 Context Words (Input)|Target Word (Predict)|
@@ -234,7 +235,7 @@ For each pair, the model:
 5. Checks if it got "is" right
 6. Back propagates and nudges the vectors
 
-#### Working through S2 — "I love Mango"
+##### Working through S2 — "I love Mango"
 
 Context Words (Input)|Target Word (Predict)|
 ---------------------|---------------------|
@@ -243,7 +244,7 @@ love, (end)|Mango|
 
 "I" and "Mango" are the context and "love" is what the model has to predict. Over millions of similar sentences, the model learns that "love" and "like" and "enjoy" all appear in similar contexts — so they end up as neighbours in vector space.
 
-#### Working through S1 — "I love India"
+##### Working through S1 — "I love India"
 
 Context Words (Input)|Target Word (Predict)|
 ---------------------|---------------------|
@@ -254,11 +255,11 @@ From the above, we get to understand that India and Mango are not related but it
 
 **Thing to remember:** A window of 1 is very tight — only immediate neighbours. In practice, Word2Vec uses a window of 2 to 5 words. A larger window captures broader topic relationships, a smaller window captures tight grammatical relationships.
 
-#### Brain Itch - Connecting CBOW with the Transformer
+##### Brain Itch - Connecting CBOW with the Transformer
 
 How does the prediction happen, I mean - consider a transformer and lets say *"Mango is a seasonal fruit"* is a sentence that goes into the N=6 encoder and decoder stack? Isn't the whole sentence coming in to the encoder? When we say prediction, are we saying that after the training loop, when the GEN AI model converses with a human the prediction happens?
 
-##### Context 1 — Word2Vec CBOW Training (Learning Phase)
+###### Context 1 — Word2Vec CBOW Training (Learning Phase)
 
 Here the sentence *"Mango is a seasonal fruit"* is used as training data.
 
@@ -270,7 +271,7 @@ Here the sentence *"Mango is a seasonal fruit"* is used as training data.
 
 The prediction task is just a vehicle. The real destination is the vectors. Once training is done, CBOW is discarded. The vectors are what we keep.
 
-##### Context 2 — Transformer Inference (Conversation Phase)
+###### Context 2 — Transformer Inference (Conversation Phase)
 
 **Yes, Prediction happens when responding back to the human real time.**
 
@@ -287,3 +288,6 @@ Whole sentence available?|✅ Yes — but one word is hidden|✅ Yes — in the 
 Prediction direction|Fills a gap in the middle|Generates word by word forward|
 Purpose of prediction|Build vectors|Generate actual response|
 Human involved?|❌ No — self supervised|✅ Yes — real conversation
+
+***Summary: Word2Vec predicts to learn. Transformers predict to respond. Same word — completely different purpose.***
+
