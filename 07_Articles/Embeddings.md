@@ -168,3 +168,31 @@ So, when this pattern is applied to a bigger corpus lets say with 50,000 tokens 
 1. No meaning can be derived. I can love mango and mango is a seasonal fruit and that need not imply that I love any seasonal fruit.
 2. Order doesn't matter here.
 3. If the sentence is small, the vector is manageable. Imagine a vocabulary with 50,000 words. Multiple vectors are built with majority 0s. This is called a **sparse vector** and is computationally expensive and inefficient.
+
+---
+
+## Word2Vec Embedding
+
+Word2Vec was invented in 2013 by a team at Google to fix the drawbacks from BOW & TF-IDF, precisely to give words a sense of relationship and meaning.
+
+```
+Example: Mango is a seasonal fruit
+```
+
+The word "Mango" appears near "seasonal" and "fruit", so over millions of sentences, Word2Vec learns that Mango belongs in the same neighbourhood as "apple", "banana", "orange" — because they ALL appear near words like "seasonal", "fruit", "eat" and so on. It was not coded, it figured it out from the context alone.
+
+### Approaches to Word2Vec
+
+There are two approaches to Word2Vec.
+1. Continous Bag of Words (CBOW)
+2. SkipGram
+
+Before we get into the approach details, let us understand if BOW and CBOW are the same or different. 
+
+Category | BOW | CBOW |
+---------|-----|------|
+Full Form|Bag of Words|Continous Bag of Words|
+Purpose|Counts word occurrences in a document|Predicts a missing word from surrounding context|
+Output|A vector of counts|A dense, meaningful embedding|
+Understands Meaning|❌ No|✅ Yes|
+Standalone Embedding|✅ Yes|❌ No|
