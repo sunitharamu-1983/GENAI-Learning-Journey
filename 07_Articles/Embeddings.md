@@ -289,3 +289,21 @@ Human involved?|❌ No — self supervised|✅ Yes — real conversation
 
 ***Summary: Word2Vec predicts to learn. Transformers predict to respond. Same word — completely different purpose.***
 
+---
+#### Skip-Gram Approach
+
+- Unlike the traditional N-gram approach, where the words must be consecutive, skip-gram does not require the same.
+- So what is the connection to Skip-Gram?
+    -  Here's the key distinction:
+        -  **Words: N-Grams:** Must be Consecutive, **Skip-Grams:** Within a window, gaps are allowed
+        -  **Captures: N-Grams:** Exact Phrases, Skip-Grams: Broader Context relationships
+        -  **Examples: N-Grams:** "seasonal fruit" must be adjacent, **Skip-Grams:** "Mango" → "fruit" — can skip "is", "a", "seasonal"
+
+**Summary:**
+1. Skip-Grams are slower. If your corpus is smaller and you need greater accuracy, you can go for Skip-Gram
+2. If the Corpus is large, has common words and need speed - use CBOW.
+3. With the same example provided for CBOW, instead of the continuous bag of words with respect to Window of N - Skip-Gram must predict words (N positions away), so the context building is even better because it just does not see the immediate neighbours.
+4. By building this way, after millions of sentences, "India" / "Mango" can all get nudged into the neighbourhood of "Country", "Season", "food", "likeable", "desirable" and so on.
+5. Skip-Grams are bidirectional too, if you take "Mango" - can predict, "is"/"a" or if "is" - can predict, "Mango" "a"
+
+***Analogy: N-Grams are neighbours who must share a wall. Skip-Gram are neighbours who can live a few houses apart and still know each other. ***
