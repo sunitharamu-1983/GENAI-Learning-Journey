@@ -277,3 +277,13 @@ The prediction task is just a vehicle. The real destination is the vectors. Once
 - The whole sentence comes into the encoder ✅ — "Mango is a seasonal fruit"
 - The encoder processes ALL words simultaneously using self-attention
 - The decoder then predicts one word at a time — auto-regressively
+
+##### Comparison Study
+
+Word2Vec-CBOW|Transformer Inference|
+-------------|---------------------|
+When does it happen?|During training|During live conversation|
+Whole sentence available?|✅ Yes — but one word is hidden|✅ Yes — in the encoder
+Prediction direction|Fills a gap in the middle|Generates word by word forward|
+Purpose of prediction|Build vectors|Generate actual response|
+Human involved?|❌ No — self supervised|✅ Yes — real conversation
