@@ -304,6 +304,10 @@ Human involved?|❌ No — self supervised|✅ Yes — real conversation
 2. If the Corpus is large, has common words and need speed - use CBOW.
 3. With the same example provided for CBOW, instead of the continuous bag of words with respect to Window of N - Skip-Gram must predict words (N positions away), so the context building is even better because it just does not see the immediate neighbours.
 4. By building this way, after millions of sentences, "India" / "Mango" can all get nudged into the neighbourhood of "Country", "Season", "food", "likeable", "desirable" and so on.
-5. Skip-Grams are bidirectional too, if you take "Mango" - can predict, "is"/"a" or if "is" - can predict, "Mango" "a"
-
+5.Like CBOW, Skip-Gram's context window is bidirectional — "Mango" predicts both forward ("is", "a") and backward neighbours within the window.
 ***Analogy: N-Grams are neighbours who must share a wall. Skip-Gram are neighbours who can live a few houses apart and still know each other.***
+
+### Problems in Word2Vec:
+1. "Apple" the fruit and "Apple" the company get the same vector — Word2Vec has one vector per word regardless of context.
+2. Requires Large Corpus
+3. Once trained, vectors never change — "bank" always means the same thing regardless of context
