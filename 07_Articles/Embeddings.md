@@ -189,6 +189,8 @@ There are two approaches to Word2Vec.
 
 Before we get into the approach details, let us understand if BOW and CBOW are the same or different. 
 
+***Summary: They are two different concepts. BOW is standalone embedding technique and the CBOW is one among the Word2Vec approaches.***
+
 Category | BOW | CBOW |
 ---------|-----|------|
 Full Form|Bag of Words|Continous Bag of Words|
@@ -197,4 +199,54 @@ Purpose|Counts word occurrences in a document|Predicts a missing word from surro
 Output|A vector of counts|A dense, meaningful embedding|
 Understands Meaning|❌ No|✅ Yes|
 
-***Summary: They are two different concepts. BOW is standalone embedding technique and the CBOW is one among the Word2Vec approaches.***
+S1 — "I love India"
+S2 — "I love Mango"
+S3 — "Mango is a seasonal fruit"
+
+
+### How CBOW works — Step by Step
+
+CBOW uses a context window, a fixed number of words on either side of the target word. Let's use a window of 1 (one word on each side) for simplicity.
+
+```
+Example: Let's say you have 3 sentences.
+
+S1 - "I love India" 
+S2 - "I love Mango" 
+S3 - "Mango is a seasonal fruit"
+```
+
+#### Working through S3 — "Mango is a seasonal fruit"
+CBOW slides through the sentence and creates training pairs like this:
+
+Context Words (Input)|Target Word (Predict)|
+---------------------|---------------------|
+Mango, a|is|
+is, seasonal|a|
+a, fruit|seasonal|
+seasonal, (end)|fruit
+
+For each pair, the model:
+1. Takes the context words — "Mango" and "a"
+2. Averages their vectors together into one combined vector
+3. Asks — "given this combined meaning, what word sits in the middle?"
+4. Makes a prediction across the entire vocabulary
+5. Checks if it got "is" right
+6. Back propagates and nudges the vectors
+
+#### Working through S2 — "I love Mango"
+
+Context Words (Input)|Target Word (Predict)|
+---------------------|---------------------|
+I, Mango|love|
+love, (end)|Mango|
+
+"I" and "Mango" are the context and "love" is what the model has to predict. Over millions of similar sentences, the model learns that "love" and "like" and "enjoy" all appear in similar contexts — so they end up as neighbours in vector space.
+
+#### Working through S1 — "I love India"
+
+Context Words (Input)|Target Word (Predict)|
+---------------------|---------------------|
+I, India|love|
+love, (end)|India
+
