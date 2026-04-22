@@ -280,8 +280,8 @@ The prediction task is just a vehicle. The real destination is the vectors. Once
 
 ##### Comparison Study
 
-Word2Vec-CBOW|Transformer Inference|
--------------|---------------------|
+Questions|Word2Vec-CBOW|Transformer Inference|
+---------|-------------|---------------------|
 When does it happen?|During training|During live conversation|
 Whole sentence available?|✅ Yes — but one word is hidden|✅ Yes — in the encoder
 Prediction direction|Fills a gap in the middle|Generates word by word forward|
