@@ -250,3 +250,30 @@ Context Words (Input)|Target Word (Predict)|
 I, India|love|
 love, (end)|India
 
+From the above, we get to understand that India and Mango are not related but it is related to an I+ contexts. India and Mango can learn that it can loosely accompany "I" in contexts. This will happen after learning through millions of sentences. Possibly, "like", "enjoy" and so on all can accompany "I" too. Starting from random numbers, after millions of nudges across your corpus and similar sentences - the contexts will be learnt and the predictions will be made. 
+
+**Thing to remember:** A window of 1 is very tight — only immediate neighbours. In practice, Word2Vec uses a window of 2 to 5 words. A larger window captures broader topic relationships, a smaller window captures tight grammatical relationships.
+
+#### Brain Itch - Connecting CBOW with the Transformer
+
+How does the prediction happen, I mean - consider a transformer and lets say *"Mango is a seasonal fruit"* is a sentence that goes into the N=6 encoder and decoder stack? Isn't the whole sentence coming in to the encoder? When we say prediction, are we saying that after the training loop, when the GEN AI model converses with a human the prediction happens?
+
+##### Context 1 — Word2Vec CBOW Training (Learning Phase)
+
+Here the sentence *"Mango is a seasonal fruit"* is used as training data.
+
+- The whole sentence comes in ✅
+- But CBOW artificially hides one word and asks the model to predict it
+- This is not a real conversation — it's a ***self-supervised learning*** trick
+- The sentence is used thousands of times with different words hidden each time
+- The goal is NOT to actually predict words — the goal is to build good vectors as a byproduct of trying to predict
+
+The prediction task is just a vehicle. The real destination is the vectors. Once training is done, CBOW is discarded. The vectors are what we keep.
+
+##### Context 2 — Transformer Inference (Conversation Phase)
+
+**Yes, Prediction happens when responding back to the human real time.**
+
+- The whole sentence comes into the encoder ✅ — "Mango is a seasonal fruit"
+- The encoder processes ALL words simultaneously using self-attention
+- The decoder then predicts one word at a time — auto-regressively
