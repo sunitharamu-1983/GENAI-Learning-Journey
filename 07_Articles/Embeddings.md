@@ -192,7 +192,9 @@ Before we get into the approach details, let us understand if BOW and CBOW are t
 Category | BOW | CBOW |
 ---------|-----|------|
 Full Form|Bag of Words|Continous Bag of Words|
+Standalone Embedding|✅ Yes|❌ No|
 Purpose|Counts word occurrences in a document|Predicts a missing word from surrounding context|
 Output|A vector of counts|A dense, meaningful embedding|
 Understands Meaning|❌ No|✅ Yes|
-Standalone Embedding|✅ Yes|❌ No|
+
+***Summary: They are two different concepts. BOW is standalone embedding technique and the CBOW is one among the Word2Vec approaches.***
