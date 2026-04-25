@@ -1,6 +1,6 @@
 # GloVe — Global Vectors for Word Representation
 
-GloVe was developed at Stanford in 2014 — one year after Word2Vec.
+**GloVe was developed at Stanford in 2014 — one year after Word2Vec.**
 
 ## Why GloVe was needed
 Word2Vec was a giant leap — but it had one limitation:
