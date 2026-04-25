@@ -84,3 +84,82 @@ Example strength|"Mango" near "fruit" in one sentence"|Mango" near "fruit" acros
 *Imagine you want to understand which team members work closely together. Word2Vec would shadow each person individually and observe who they talk to during the day. GloVe would pull the entire email and chat history of the organisation at once and count — across all time — who communicated with whom and how often. GloVe sees the full picture, not just today's snapshot.*
 
 ---
+
+## FastText — Sub-word Embeddings
+
+FastText was developed by **Facebook AI Research (FAIR) in 2016.**
+
+### Why FastText was needed
+
+*Both Word2Vec and GloVe had one shared blind spot:If a word was never seen during training — they had absolutely no vector for it. This is called an Out of Vocabulary (OOV) problem.*
+
+### The Core Idea — Breaking words into pieces
+
+FastText learns vectors for **sub-words** — small character chunks called **character n-grams.**
+
+Using *"Mango"* with n=3 (trigrams):
+
+| Sub-word chunks |
+|---|
+| \<Ma |
+| Man |
+| ang |
+| ngo |
+| go\> |
+| \<Mango\> |
+
+The < and > symbols mark the beginning and end of a word — so FastText knows it's dealing with a complete word boundary, not a fragment from inside another word.
+The final vector for "Mango" = sum of all its sub-word vectors. The final vector for *"Mango"* = **sum of all its sub-word vectors.**
+
+### How this solves OOV
+
+Now imagine a word FastText has **never seen** — *"Mangoes"*
+
+FastText breaks it down:
+
+| Sub-word chunks |
+|---|
+| \<Ma |
+| Man |
+| ang |
+| ngo |
+| oes |
+| go\> |
+
+It recognises "<Ma", "Man", "ang", "ngo" — it has seen these before in "Mango"! So it constructs a reasonable vector for "Mangoes" from familiar pieces — even though it never saw the full word.
+
+### Word variations FastText handles beautifully
+
+| Word | Shares sub-words with |
+|---|---|
+| Mango | Mangoes, Mangoed |
+| Season | Seasonal, Seasoning, Seasoned |
+| Love | Lovely, Loved, Lover, Loveable |
+
+### Full Comparison — All 5 Embeddings
+
+| | BOW | TF-IDF | Word2Vec | GloVe | FastText |
+|---|---|---|---|---|---|
+| Meaning | ❌ | ❌ | ✅ | ✅ | ✅ |
+| Order matters | ❌ | ❌ | ⚠️ | ⚠️ | ⚠️ |
+| Sparse vectors | ❌ | ❌ | ✅ | ✅ | ✅ |
+| Word importance | ❌ | ✅ | ✅ | ✅ | ✅ |
+| Global context | ❌ | ❌ | ❌ | ✅ | ✅ |
+| OOV words | ❌ | ❌ | ❌ | ❌ | ✅ |
+| Polysemy | ❌ | ❌ | ❌ | ❌ | ❌ |
+
+
+### What FastText still can't do
+
+*Polysemy - one word and multiple meanings and context dependent meaning*. Fixing polysemy and static embeddings is what led to contextual embeddings like BERT (Upcoming) and eventually the Transformer architecture you already have seen in my Tech Blog [1]!
+
+### One line to remember
+
+> *Word2Vec and GloVe learn words. FastText learns the DNA of words — and can reconstruct meaning even for words it has never seen.*
+
+### Layman Analogy
+
+> *Imagine you encounter a word in Tamil you've never seen before — but you recognise the root and the suffix. You can make a reasonable guess at the meaning. That's exactly what FastText does — it reads the roots and suffixes of words to understand meaning, even for completely new words.*
+
+### Closing Comments
+***Stay Tuned for the upcoming articles on BERT, GPT's. Its absolutely stunning***
