@@ -22,7 +22,7 @@ S3 — "Mango is a seasonal fruit"
 GloVe first builds a Co-occurrence Matrix — a table that counts how many times every word appears near every other word across ALL sentences simultaneously.
 With a window of 1:
 
-|I|love|India|Mango|is|a|seasonal|fruit|
+||I|love|India|Mango|is|a|seasonal|fruit|
 -|-|----|-----|-----|--|-|--------|-----|
 I|0|2|0|0|0|0|0|0|
 love|2|0|1|1|0|0|0|0|
@@ -59,7 +59,7 @@ Words that appear together often end up close in vector space. Words that never 
 
 
 ### The key difference from Word2Vec
-|Word2Vec|GloVe|
+||Word2Vec|GloVe|
 -|--------|-----|
 Looks at|Local context window — a few words at a time|Global co-occurrence — entire corpus at once|
 Learning method|Predicts words (CBOW or Skip-Gram)|Factorizes the co-occurrence matrix|
