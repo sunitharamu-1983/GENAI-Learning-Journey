@@ -139,15 +139,11 @@ Cosine Similarity = 1 / (1.732 × 2.236) = 1 / 3.873 = 0.258
 
 *Cosine Similarity cannot capture loss during training because it only measures direction, not magnitude. During training, the model needs to know HOW WRONG it was — not just the direction.*
 
----
-
-## One line to remember
-
-*Cosine Similarity doesn't ask "how big are you?" — it asks "which way are you pointing?" And in the world of text similarity, direction is everything.*
+***Cosine Similarity doesn't ask "how big are you?" — it asks "which way are you pointing?" And in the world of text similarity, direction is everything.***
 
 ---
 
-## Closing Comments
+## Summary
 
 ***Cosine Similarity is the bridge between embeddings and real-world applications like search, recommendation and RAG. The vectors your embeddings produce are only as useful as the similarity measure that compares them.***
 
