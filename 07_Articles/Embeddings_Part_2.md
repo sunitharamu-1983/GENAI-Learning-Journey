@@ -1,8 +1,10 @@
-# GloVe — Global Vectors for Word Representation
+# Embeddings - Part 2 - GloVe & FastText
+
+## GloVe — Global Vectors for Word Representation
 
 **GloVe was developed at Stanford in 2014 — one year after Word2Vec.**
 
-## Why GloVe was needed
+### Why GloVe was needed
 Word2Vec was a giant leap — but it had one limitation:
 
 Word2Vec learns from a local context window — it only looks at the immediate neighbours of a word, a few words at a time. GloVe asked a smarter question:
@@ -151,15 +153,16 @@ It recognises "<Ma", "Man", "ang", "ngo" — it has seen these before in "Mango"
 
 ### What FastText still can't do
 
-*Polysemy - one word and multiple meanings and context dependent meaning*. Fixing polysemy and static embeddings is what led to contextual embeddings like BERT (Upcoming) and eventually the Transformer architecture you already have seen in my Tech Blog [1]!
+*Polysemy - one word and multiple meanings and context dependent meaning*. Fixing polysemy and static embeddings is what led to contextual embeddings like BERT (***Upcoming***) and eventually the Transformer architecture you already have seen in my Tech Blog [1] - however, the that is just the base architecture and as BERT & GPT's came into play, the architecture was refined for better use. 
 
 ### One line to remember
 
-> *Word2Vec and GloVe learn words. FastText learns the DNA of words — and can reconstruct meaning even for words it has never seen.*
+***Word2Vec and GloVe learn words. FastText learns the DNA of words — and can reconstruct meaning even for words it has never seen.***
 
 ### Layman Analogy
 
-> *Imagine you encounter a word in Tamil you've never seen before — but you recognise the root and the suffix. You can make a reasonable guess at the meaning. That's exactly what FastText does — it reads the roots and suffixes of words to understand meaning, even for completely new words.*
+*Imagine you encounter a word in Tamil you've never seen before — but you recognise the root and the suffix. You can make a reasonable guess at the meaning. That's exactly what FastText does — it reads the roots and suffixes of words to understand meaning, even for completely new words.*
 
-### Closing Comments
-***Stay Tuned for the upcoming articles on BERT, GPT's. Its absolutely stunning***
+---
+
+***Stay Tuned for the upcoming articles on BERT, GPT's and how the transformer architecture evolved as days went by. Its absolutely stunning***
