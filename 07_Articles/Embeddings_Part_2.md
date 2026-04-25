@@ -52,11 +52,9 @@ For example:
 "Mango" co-occurs with "India" ❌ — never
 ```
 
-So the ratio of P(fruit | Mango) to P(India | Mango) is very high — meaning "fruit" is far more related to "Mango" than "India" is.
-GloVe trains word vectors so that their dot product equals the log of their co-occurrence count. This ensures:
+So the ratio of P(fruit | Mango) to P(India | Mango) is very high — meaning "fruit" is far more related to "Mango" than "India" is. GloVe trains word vectors so that their dot product equals the log of their co-occurrence count. This ensures:
 
-Words that appear together often end up close in vector space. Words that never appear together end up far apart.
-
+***Words that appear together often end up close in vector space. Words that never appear together end up far apart.***
 
 ### The key difference from Word2Vec
 ||Word2Vec|GloVe|
@@ -77,12 +75,12 @@ Example strength|"Mango" near "fruit" in one sentence"|Mango" near "fruit" acros
 
 ***That last problem — Out of Vocabulary words — is exactly what FastText was built to fix. 🎯***
 
-## One line to remember : Word2Vec looks at the neighbourhood. GloVe looks at the entire city — all at once.
+##### One line to remember : Word2Vec looks at the neighbourhood. GloVe looks at the entire city — all at once.
 
 ---
 
 ## Layman Analogy:
 
-_Imagine you want to understand which team members work closely together. Word2Vec would shadow each person individually and observe who they talk to during the day. GloVe would pull the entire email and chat history of the organisation at once and count — across all time — who communicated with whom and how often. GloVe sees the full picture, not just today's snapshot.
-_
+*Imagine you want to understand which team members work closely together. Word2Vec would shadow each person individually and observe who they talk to during the day. GloVe would pull the entire email and chat history of the organisation at once and count — across all time — who communicated with whom and how often. GloVe sees the full picture, not just today's snapshot.*
+
 ---
