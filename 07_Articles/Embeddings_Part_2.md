@@ -139,7 +139,7 @@ It recognises "<Ma", "Man", "ang", "ngo" — it has seen these before in "Mango"
 ### Full Comparison — All 5 Embeddings
 
 | | BOW | TF-IDF | Word2Vec | GloVe | FastText |
-|---|---|---|---|---|---|
+|:---:|:---:|:---:|:---:|:---:|:---:|
 | Meaning | ❌ | ❌ | ✅ | ✅ | ✅ |
 | Order matters | ❌ | ❌ | ⚠️ | ⚠️ | ⚠️ |
 | Sparse vectors | ❌ | ❌ | ✅ | ✅ | ✅ |
