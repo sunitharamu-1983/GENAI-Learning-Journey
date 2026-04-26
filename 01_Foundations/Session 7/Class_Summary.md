@@ -40,10 +40,10 @@ GPT = **Decoder-only** part of the Transformer architecture.
 | 1 | Unsupervised Pre-training | 7,000 books (BookCorpus) | Learn language (grammar, syntax, context) |
 | 2 | Supervised Fine-tuning | 12 labelled datasets | Learn task-specific behavior |
 
-- Input: 512 tokens → predict next token → slide window → repeat over all books.
-- Architecture: 12 decoder layers, 12 attention heads, 768 embedding dim, 40K vocabulary, *117M parameters*.
-- Trained for *1 month on 8 GPUs*.
-- Limitation: supervised fine-tuning still requires labelled data per task.
+- **Input:** 512 tokens → predict next token → slide window → repeat over all books.
+- **Architecture:** 12 decoder layers, 12 attention heads, 768 embedding dim, 40K vocabulary, *117M parameters*.
+- **Trained for** *1 month on 8 GPUs*.
+- **Limitation:** supervised fine-tuning still requires labelled data per task.
 
 ---
 
