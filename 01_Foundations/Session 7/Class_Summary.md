@@ -13,27 +13,27 @@ Two back-to-back sessions covering the evolution from Transformer → BERT → B
 
 ### BERT (2018 — Google)
 - Built using *only the encoder* of the Transformer architecture.
-- Key innovation: *Bidirectional* learning — attention matrix allows every token to attend to all other tokens (left and right), unlike decoder-only models.
-- Two pre-training tasks:
-  - *Masked Language Modeling (MLM):* randomly mask ~15% of words; model predicts the masked word.
-  - *Next Sentence Prediction (NSP):* given two sentences, predict if B follows A.
-- Fine-tuned on tasks like *SQuAD* (question answering — predicting start/end token positions), *GLUE*, Multi-NLI.
-- BERT *cannot generate text* — it only predicts/classifies.
-- Variants discussed: RoBERTa (Meta, 2019), DistilBERT, ALBERT.
-- Parameters: BERT-Base = 110M, BERT-Large = 340M.
+- **Key innovation:** *Bidirectional* learning — attention matrix allows every token to attend to all other tokens (left and right), unlike decoder-only models.
+- **Two pre-training tasks:**
+  - **Masked Language Modeling (MLM):** randomly mask ~15% of words; model predicts the masked word.
+  - **Next Sentence Prediction (NSP):** given two sentences, predict if B follows A.
+- Fine-tuned on tasks like **SQuAD** (question answering — predicting start/end token positions), **GLUE**, Multi-NLI.
+- BERT **cannot generate text** — it only predicts/classifies.
+- **Variants discussed:** RoBERTa (Meta, 2019), DistilBERT, ALBERT.
+- **Parameters:** BERT-Base = 110M, BERT-Large = 340M.
 
 ### BART (2019 — Meta/Facebook)
-- Uses *both encoder and decoder*.
-- Trained via *denoising* — text is corrupted (words shuffled/masked), model reconstructs the original.
-- Can *generate text* (unlike BERT), suited for summarization, translation, dialogue generation.
+- Uses **both encoder and decoder**.
+- Trained via **denoising** — text is corrupted (words shuffled/masked), model reconstructs the original.
+- Can **generate text** (unlike BERT), suited for summarization, translation, dialogue generation.
 - Key distinction: BERT → find answer token position; BART → generate the actual answer text.
 
 ### GPT-1 (2018 — OpenAI)
-*Core Idea:* Labelled data is scarce and costly. Use massive *unlabelled text* for pre-training, then fine-tune for specific tasks.
+**Core Idea:** Labelled data is scarce and costly. Use massive *unlabelled text* for pre-training, then fine-tune for specific tasks.
 
-GPT = *Decoder-only* part of the Transformer architecture.
+GPT = **Decoder-only** part of the Transformer architecture.
 
-*Two-stage training:*
+**Two-stage training:**
 
 | Stage | Type | Data | Goal |
 |---|---|---|---|
@@ -50,15 +50,15 @@ GPT = *Decoder-only* part of the Transformer architecture.
 ## Part 2 (Second Session — 2h 6m)
 
 ### GPT-2 (2019 — OpenAI)
-*Core Leap:* Removed supervised fine-tuning entirely — *zero-shot learning*.
+**Core Leap:** Removed supervised fine-tuning entirely — *zero-shot learning*.
 
-- Trained on *WebText* — 40 GB of data scraped from 8 million Reddit-linked web pages (links with ≥3 karma upvotes).
-- Model learned translation, sentiment, Q&A *without explicit task training* — emerged naturally from scale.
-- Surprising finding: even with non-English pages filtered out, GPT-2 learned French translation from just ~10MB of incidental bilingual web content.
-- Parameters scaled 10x: up to *1.5 billion* (48 layers, 1600 embedding dim).
-- Four model sizes: 117M → 345M → 762M → 1.5B.
+- Trained on **WebText** — 40 GB of data scraped from 8 million Reddit-linked web pages (links with ≥3 karma upvotes).
+- Model learned translation, sentiment, Q&A **without explicit task training** — emerged naturally from scale.
+- **Surprising finding:** even with non-English pages filtered out, GPT-2 learned French translation from just ~10MB of incidental bilingual web content.
+- **Parameters scaled 10x:** up to **1.5 billion** (48 layers, 1600 embedding dim).
+- **Four model sizes:** 117M → 345M → 762M → 1.5B.
 
-*GPT-1 vs GPT-2 in one line:*
+**GPT-1 vs GPT-2 in one line:**
 > GPT-1 = pre-train on books + fine-tune on labelled tasks. GPT-2 = pre-train on the internet, no fine-tuning needed.
 
 ### Hands-on Notebooks Shared
