@@ -2,6 +2,8 @@
 
 ---
 
+**Link for Positional Encoding Formula** - **Link**: https://www.geeksforgeeks.org/nlp/positional-encoding-in-transformers/
+
 ### Structured Markup Summary
 
 #### 🚨 The Problem: The Cost of Parallelization
