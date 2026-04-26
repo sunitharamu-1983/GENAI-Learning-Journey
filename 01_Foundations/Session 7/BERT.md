@@ -108,6 +108,14 @@ Total Error = (Error from guessing the I) + (Error from guessing IsNext)
 
 <img width="1239" height="547" alt="image" src="https://github.com/user-attachments/assets/16cd72ef-89fc-4620-b031-b0e7cd67ece2" />
 
+#### The Layman Explanation - Formulae (The "Building a Sandwich" Analogy)
+
+If the 2017 Transformer paper was a complex chemistry textbook explaining how to bake bread from molecular flour (the Q/K/V math), the BERT paper is a recipe card that says: "Go buy the bread from the store."
+
+- **Formula 1 is the recipe:** "Take one slice of bread (Token), add a slice of cheese (Position), and add a slice of ham (Segment)." It’s just assembly instructions.
+- **Formulas 2 & 3 are the taste test:** "Did the sandwich taste good (did we guess the right word)? If not, calculate how bad it tasted (Log Loss) so we know what ingredients to change next time."
+***There is no complex physics or calculus in this paper. It is purely a "systems engineering" paper. They took pre-existing math blocks, stacked them up, and figured out the best way to train them.***
+  
 ---
 
 ## 4. What This Means for YOU in Human Terms:
