@@ -81,6 +81,35 @@ Because the student is already a genius at reading, they master the 1-day worksh
 
 ---
 
+## The Only Math You Need to Read the BERT Paper
+
+```
+=============================================================
+FORMULA 1: BUILDING THE INPUT (Addition)
+-------------------------------------------------------------
+Word "Apple"  = [0.5, 0.2, 0.8]  (Token)
+Position "2"  = [0.1, 0.1, 0.1]  (Position)
+Sentence "A"  = [0.0, 0.9, 0.0]  (Segment)
+-----------------------------------
+FINAL INPUT   = [0.6, 1.2, 0.9]  (Just add them up!)
+
+=============================================================
+FORMULA 2 & 3: CALCULATING THE ERROR (Subtraction/Division)
+-------------------------------------------------------------
+Both MLM and NSP just use standard "Log Loss". 
+It's just the mathematical way to measure the "Error" we talked about!
+
+Total Error = (Error from guessing the I) + (Error from guessing IsNext)
+```
+
+---
+
+## Formula Used in Paper
+
+<img width="1239" height="547" alt="image" src="https://github.com/user-attachments/assets/16cd72ef-89fc-4620-b031-b0e7cd67ece2" />
+
+---
+
 ## 4. What This Means for YOU in Human Terms:
 
 *   **If somebody writes `[SEP]`:** It's just a period/punctuation mark that tells the model "End of Sentence A, start of Sentence B." 
