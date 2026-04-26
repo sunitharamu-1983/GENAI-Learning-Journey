@@ -114,6 +114,7 @@ If the 2017 Transformer paper was a complex chemistry textbook explaining how to
 
 - **Formula 1 is the recipe:** "Take one slice of bread (Token), add a slice of cheese (Position), and add a slice of ham (Segment)." It’s just assembly instructions.
 - **Formulas 2 & 3 are the taste test:** "Did the sandwich taste good (did we guess the right word)? If not, calculate how bad it tasted (Log Loss) so we know what ingredients to change next time."
+
 ***There is no complex physics or calculus in this paper. It is purely a "systems engineering" paper. They took pre-existing math blocks, stacked them up, and figured out the best way to train them.***
   
 ---
