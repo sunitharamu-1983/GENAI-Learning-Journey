@@ -1,12 +1,10 @@
-# Tech Blog #6 — GPT-1
-## Generative Pre-Training — The Origin Story of ChatGPT
-### OpenAI — June 2018
+# Generative Pre-Training (GPT-1) — The Origin Story of ChatGPT (OpenAI — June 2018)
 
 ---
 
 ## The Problem GPT-1 Solved
 
-Before GPT-1, every NLP task needed its own custom model with lots of labeled data. Building custom models was expensive and slow. OpenAI asked — what if we pre-train ONE general model on massive unlabeled text and then quickly fine-tune it for any task?
+Before GPT-1, every NLP task needed its own custom model with lots of labeled data. Building custom models was expensive and slow. OpenAI asked, "what if we pre-train ONE general model on massive unlabeled text and then quickly fine-tune it for any task?"
 
 ---
 
@@ -37,7 +35,7 @@ The Decoder uses causal masking — every word can only see words that came BEFO
 
 ### Stage 1 — Unsupervised Pre-training
 
-GPT-1 was trained on BooksCorpus — over 7,000 unpublished books across Adventure, Fantasy, Romance and more genres. The task was simple — given the previous words, predict the next word. No labels needed. Just raw text.
+GPT-1 was trained on BooksCorpus, over 7,000 unpublished books across Adventure, Fantasy, Romance and more genres. The task was simple. Given the previous words, predict the next word. No labels needed. Just raw text.
 
 ```
 Example:
@@ -48,7 +46,7 @@ Input:  "I love Mango and" → Predict: "India"
 
 ### Stage 2 — Supervised Fine-tuning
 
-After pre-training, a small labeled dataset is used to fine-tune the model for a specific task. Because the model already deeply understands language — only a small amount of labeled data is needed. Fine-tuning takes just 3 epochs for most tasks.
+After pre-training, a small labeled dataset is used to fine-tune the model for a specific task. Because the model already deeply understands language, only a small amount of labeled data is needed. Fine-tuning takes just 3 epochs for most tasks.
 
 ---
 
@@ -82,7 +80,7 @@ Example:
 
 ### 2. GELU Instead of ReLU
 
-ReLU (Rectified Linear Unit) kills all negative values completely — setting them to zero. This can create dead neurons. GELU (Gaussian Linear Unit) keeps small negative values slightly active — smooth curve below zero. Prevents dead neurons. Better for deep models.
+ReLU (Rectified Linear Unit) kills all negative values completely — setting them to zero. This can create dead neurons. GELU (Gaussian Linear Unit) keeps small negative values slightly active, smooth curve below zero. Prevents dead neurons. Better for deep models.
 
 ```
 ReLU:  negative → 0 (hard cut — dead neuron risk). Positive - Keep it as it is. 
@@ -107,7 +105,7 @@ Instead of fixed sine/cosine formula, GPT-1 learned position embeddings from tra
 
 ## Task-Specific Input Transformations — One Model, Many Tasks
 
-Instead of changing the model architecture for each task, GPT-1 changed the INPUT FORMAT. Same model weights — different input structure. This is the elegant engineering insight of the paper.
+Instead of changing the model architecture for each task, GPT-1 changed the INPUT FORMAT. Same model weights but different input structure. This is the elegant engineering insight of the paper.
 
 ```
 Classification:       [Start] Sentence [End]
@@ -120,7 +118,11 @@ Question Answering:   [Start] Context [Delim] Question [Delim] Answer [End]
 
 ## The Results — 9 out of 12 Tasks
 
-GPT-1 tested on 12 datasets across 4 categories — Natural Language Inference, Question Answering, Semantic Similarity and Text Classification. Beat the previous state-of-the-art on 9 out of 12, all with ONE general model vs task-specific specialists.
+GPT-1 tested on 12 datasets across 4 categories and it beat the 9 out of 12 tasks. 
+- Natural Language Inference
+- Question Answering
+- Semantic Similarity
+- Text Classification
 
 | Category | Improvement |
 |---|---|
@@ -133,7 +135,7 @@ GPT-1 tested on 12 datasets across 4 categories — Natural Language Inference, 
 
 ## The Surprise — Zero-Shot Behaviour
 
-The most unexpected finding. Even WITHOUT fine-tuning — GPT-1 could perform some tasks reasonably well just from pre-training. 
+The most unexpected finding. Even WITHOUT fine-tuning, GPT-1 could perform some tasks reasonably well just from pre-training. 
 
 For sentiment — they added the word "very" and asked "positive or negative?" It worked. Nobody fully realized the significance at the time, but this was the first glimpse of GPT-3 and ChatGPT.
 
@@ -141,7 +143,7 @@ For sentiment — they added the word "very" and asked "positive or negative?" I
 
 ## The Ablation Study — What Happens Without Pre-training?
 
-When they removed pre-training and only used fine-tuning — performance dropped by 14.8%. Though it had a zero shot surpirse behaviour, it also proved conclusively that pre-training on unlabeled data is essential — not optional.]*
+When they removed pre-training and only used fine-tuning, performance dropped by 14.8%. Though it had a zero shot surpirse behaviour, it also proved conclusively that pre-training on unlabeled data is essential and not optional.]*
 
 | Version | Average Score |
 |---|---|
@@ -167,6 +169,6 @@ When they removed pre-training and only used fine-tuning — performance dropped
 
 ## Closing Thoughts
 
-The journey from BOW → TF-IDF → Word2Vec → GloVe → FastText → Transformer → BERT → GPT-1 is the story of how machines learned to understand and generate language — one limitation fixed at a time. GPT-1 was the origin story of ChatGPT. The seed was planted in 2018 with 7,000 books and one simple question — what if one model could do everything?
+The journey from BOW → TF-IDF → Word2Vec → GloVe → FastText → Transformer → BERT → GPT-1 is the story of how machines learned to understand and generate language, one limitation fixed at a time. GPT-1 was the origin story of ChatGPT. The seed was planted in 2018 with 7,000 books and one simple question, "***What if one model could do everything?***"
 
 ---
