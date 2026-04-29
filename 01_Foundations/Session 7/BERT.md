@@ -51,7 +51,7 @@ Target: Guess the relationship. (Learns logical flow between sentences)
 When this paper dropped, it destroyed every record on the GLUE benchmark (a test of 11 different NLP tasks).
 
 TASK|OLD BEST SCORE|BERT SCORE|
-----|--------------|----------|
+----|:--------------:|:----------:|
 Sentiment Analysis|84.5%|94.9%|
 Question Answering|78.1%|93.2%|
 Natural Language Inf|77.0%|86.4%|
