@@ -53,7 +53,7 @@ After pre-training, a small labeled dataset is used to fine-tune the model for a
 ## Key Technical Differences from Original Transformer
 
 | Detail | Original Transformer (2017) | GPT-1 (2018) |
-|---|---|---|
+|---|:---:|:---:|
 | Layers | 6 | **12** |
 | Embedding Dimension | 512 | **768** |
 | Feed Forward Dimension | 2048 | **3072** |
