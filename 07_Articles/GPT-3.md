@@ -4,15 +4,15 @@
 
 ---
 
-## 1. The Core Bombshell (The TL;DR)
+## 1. The Core Bombshell
 
 If GPT-2 (1.5 Billion parameters) proved that an AI could accidentally learn skills by reading the internet, **GPT-3 (175 Billion parameters)** proved that if you make an AI unimaginably massive, it can perform almost any intellectual task just by reading a few examples in its prompt—**without ever changing its internal brain weights.** 
 
-It didn't just cross a threshold; it vaporized it.
+***It didn't just cross a threshold; it vaporized it.***
 
 ---
 
-## 2. Jargon Decoder (What the title actually means)
+## What the title actually means
 
 *   **"Language Model":** Still just a Next-Word Predictor. But on steroids.
 *   **"Few-Shot Learners":** The ability to teach the AI a brand new task by giving it just 2 to 10 examples right there in the chat prompt, and having it instantly adapt. 
@@ -78,7 +78,7 @@ Because the Common Crawl dataset includes Reddit, 4chan, and unmoderated forums,
 
 ---
 
-## 7. What This Means in Human Terms (Sunitha)
+## 7. What This Means in Human Terms
 
 ### Why this paper killed Fine-Tuning for 90% of use cases
 Before GPT-3, if you wanted a custom AI, you *had* to do Step 2 (Fine-Tuning). GPT-3 proved that Prompt Engineering (crafting the perfect 3 examples in the chat box) is often just as effective as spending $5,000 on cloud compute to Fine-Tune a model. 
@@ -101,9 +101,8 @@ Because GPT-3 was so massive (175B parameters), no normal person could run it on
 
 ---
 
-## 9. Your "Interview Flex" Quotes for Articles
+## 9. "Interview Flex" Quotes for Articles
 
 > *"GPT-2 showed us that scale unlocks skills; GPT-3 showed us that scale unlocks generalization. By expanding the context window to 2048 tokens, GPT-3 transformed the prompt from a simple instruction into a dynamic workspace. You aren't just asking the model a question; you are handing it a mini-dataset inside the prompt, and it performs In-Context Learning to adapt its weights on the fly, without a single gradient update."*
 
 > *"The biggest takeaway from the GPT-3 paper isn't just its accuracy. It's the discovery that the bottleneck is no longer the algorithm—it's the compute. The architecture hasn't fundamentally changed since 2017. What changed is that we realized we can just throw more data and more GPUs at the exact same math, and emergent abilities simply wake up."*
-```
