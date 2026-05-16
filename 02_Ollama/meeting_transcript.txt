@@ -1,0 +1,25 @@
+# Meeting Transcription
+
+  Meeting started: 5/9/2026, 8:03:35 AM
+  Duration: 701 minutes
+  Participants: Akash Balmiki, Asha Ponraj, Bhagya Ganisetti, Damodaran Selvaraj, Dinesh Balaraman, Jeganathan K, Kamalam jayaraman, Kannabiran G, Mohamed Noordeen, Mohamed Suhaib, Muniappan Mohanraj, Navyatha Mattupali, neelsvel1, Parthasarathi, Ramesh Kandasamy, Sabarinathan J, Shabbir J, Sheriba Thankarajan Selvam, Sirajuddeen G, Sri Ranjith, Srinivasan Mariappan, Sriram Subramanian, Sundar B, Sunitha Ramu, Suresh Soundararajan, Sureshkumar Venkatachalam, Varun prasath, Venkatesan prahalanathan, Vijayarajan Packrisamy, vinoth kumar venkatesan
+
+  [View original transcript](https://app.tactiq.io/api/2/u/m/r/Kcwn4eb4RuNq4lKMVBvx?o=txt)
+
+    
+
+  
+
+  
+    ## Highlights
+
+    > 05:41 Mohamed Suhaib: Using container, Docker container, and you can learn the how to deploy your model as an endpoint in AWS and GCP, practically everything I'm saying, practically, so, and then he will have one session on AWS SageMaker, where... He will be using some data set machine learning data set to how how to build a model in the AWS and how to. He will be using some data set machine learning data set to how to build a model in AWS and... How to train your data so you can learn from that misleading perspective? You can learn everything here and also like, yeah, he will teach you on so which is very important in interview perspective because when you go to any machine learning interviews so they will ask you on.
+> 06:11 Mohamed Suhaib: how to train your data so you can learn from that machine learning perspective you can learn everything here and also like he will teach you on MLOps so which is very important in interview perspective because when you go to any machine learning interviews.
+> 09:12 Mohamed Suhaib: When you come to generic classes, right, you can learn like multiple research papers from more like he will completely go through the research papers and then he will make you understand why this GPT 3.5 what is instruct GPT. What is the difference between that? What is the drawback? Why what we are chewing the newer version so and then in reinforcement learning and human feedback and when you come to rag, what is the, what are the multiple checking strategies are there? What is the vector database we are using in production like Pine Cone and all? So those are very important.
+> 09:34 Mohamed Suhaib: What is the difference between that? What is the drawback? Why, what, what we achieve in the newer version? So, and then in reinforcement learning and human feedback, and when you come to RAG, what is the what are the multiple junking strategies are there? What is the vector database we are using in production like? So those are very important in those class you have to pay like multiple attention like you should not miss those class. That's what I'm seeing. When you when it come to LAN chain and land graph that like he will show like. Pine cone and all, so those are very important in those class. You have to pay like multiple attention, like you should not miss those class. That's what I'm saying when you when it come to Langchain and Langgraph that.
+> 22:08 Mohamed Suhaib: Yeah. Yeah. Yeah. So, yeah, sure, sure. That is very also very important. See, I based off time based out of Chennai, OK? I'm not. I didn't get any interest in Chennai for, to be frank. OK. So I saw that difference. So I changed my location to Bangalore, OK. And I'm getting like.
+> 22:31 Mohamed Suhaib: Yeah, yeah, I can answer. So, yeah, sure, sure. That is very also very important. See, I based off, I'm based out of Chennai, OK? And I didn't get any introduce in Chennai for, to be frank. OK, so I saw that difference, so I changed my location to Bangalore. OK.
+> 24:06 Mohamed Suhaib: I can't able to manage my current job and attend 5 because I can't so I Max I I I have attended 3 interviews on the day and three to four also sometimes, but because I can't able to manage my schedule with respect to my current project and all I have like moved it to further tomorrow or day after tomorrow like.
+> 24:28 Mohamed Suhaib: I can't able to manage my current job and attend 5 because I can't, so I max, I have attended 3 interviews on a day and three to four also sometimes, but because I can't able to manage my schedule with respect to my current project and all, I have like mood in. So far, then, tomorrow or day after tomorrow like that. So mostly I will try to attend in the morning itself because 11:00 to 12:00 my my job will start by 12 only. So the stand up. So from there we will work till nine like UK UK schedule.
+> 24:42 Mohamed Suhaib: to further tomorrow or day after tomorrow like that. So mostly I will try to attend in the morning itself because 11 to 12, my job will start by 12 only. So the stand up. So from there, we will work till 9.
+> 25:59 Mohamed Suhaib: 13 Drew's due to 13 Drew's yeah, yeah.
