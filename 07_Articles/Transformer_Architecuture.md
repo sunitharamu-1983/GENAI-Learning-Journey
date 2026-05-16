@@ -1,0 +1,104 @@
+# Transformer Architecture
+
+***The class explained the Transformer architecture, with the "Monalisa of the AI" diagram with the Encoder and Decoder stack.***
+
+```
+Paper Used: Attention is All You Need
+v1 - 2017
+v7 - 2023
+```
+
+---
+
+### Q, K & V Metrices & Self Attention
+
+Before we talk about Self Head and Multi head attention, it is imperative to explain the Q, K & V Metrices. 
+```
+Example Sentence: "I bought an apple to eat"
+```
+- Every word in the sentence has its own Q, K & V Vectors.
+- Q - Query, K - Keys, V - Values
+- Q holds the question, K is the answer key and V is the actual answer.
+
+- So when we compute attention for Apple, we take Apple's Q and score it against the K of every other word — including itself. The result tells us how much attention Apple should pay to each word.
+- The scoring is NOT cosine similarity — it's called the scaled dot product. Softmax(Q·K / √dk) × V — uses a scaled dot product, not cosine similarity. Cosine similarity also measures angular closeness. Cosine similarity ignores magnitude — it only cares about the direction/angle between two vectors. In Transformers, magnitude carries meaningful information. A word that is strongly relevant should produce a large dot product value — and that "loudness" matters when computing attention weights. If you normalize it away like cosine similarity does, you lose that signal. Hence we divide by the square root of dimensions to ensure that we aren't too far off or do not push into tiny gradients.
+- The V matrix is not "built after" the dot product of Q & K. V is derived independently — just like Q and K, it comes from multiplying the input embedding by its own learned weight matrix (Wv). The dot product of Q & K only produces the attention scores (the weights). Those weights are then applied to V to produce the final output.
+- Every single word in the sentence attends to every other word including itself to get accurate weights so that no word is skipped or treated less important.
+
+### Multi-Head Attention
+
+- Running the Self-Attention mechanism multiple times (usually 8) in parallel, but using different sets of Q, K, and V weight matrices each time.
+- Single Self-Attention might only capture one type of relationship (e.g., "Apple" and "eat" are both about food). But what about grammar? What about tone? A single pass misses nuances.
+- Instead of one final vector per word, you get 8 different vectors per word (may be representing grammar, topic, emotion, etc.), which are squashed together to create a super-vector that captures everything.
+- What it learns, such as grammar, tone, emotional context is all dependent on the self attention happening parallelly. 
+
+### What is Squashing?
+
+- The multiple vectors (assuming 8) are first concatenated (joined end to end) and then multiplied by a learned weight matrix (Wo) to project them back to the original dimension. (Can be 512 or so)
+
+### Notable Detail
+
+- If the model dimension is 512 and there are 8 heads, each head works with 512/8 = 64 dimensions, not the full 512. So the total computation stays manageable.
+
+---
+
+### Positional encoding
+
+- Remember the big win of the Transformer? Self-Attention processes all words at the exact same time (in parallel). Because it processes them all in a single flash, the model has no idea what order the words are in.
+- To a basic Transformer, "The dog bit the man" and "The man bit the dog" look mathematically identical. The Word2Vec for "dog" and "man" are the same in both sentences. If you don't know the order, the meaning is destroyed.
+- Before the words enter the Self-Attention mechanism, we literally add a unique set of numbers (a vector) to each word's token embedding.
+- The word "dog" now has its original meaning numbers plus a new set of numbers that scream "I AM THE SECOND WORD IN THIS SENTENCE!"
+  
+- **Why do they use weird sine/cosine wave formulas for this?** Because sine waves repeat predictably. By using waves of different speeds (frequencies), the model can easily mathematically calculate the distance between any two words (e.g., "Word A is 3 words away from Word B"). With numbers the relative distance cannot be obtained, but with the sine waves, which goes up and down, the relative distances can be obtained. 
+  
+### Encoder Stack
+
+1. **Input Raw data** is tokenized, Converted to vector & positional encoding is added to obtain the final embedding. This final embedding will be sent as an input to the Encoder Stack.
+2. **Encoder** takes this input, runs self attention parallelly with 8 heads (multi head attention) [explained above] and this gives a continuous representation. **Point to Note -** Self attention is performed as Softmax (Dot Product (Q.K / Sq.rt (Dimension) (dk)) x V.
+3. This continuous representation is sent through an **Add & Norm layer**. Addition layer is placed to solve the vanishing gradient problem. This is by residual addition from the input vector.
+    - The residual connection shortens the effective gradient path because it bypasses layers — so it's one mechanism solving one core problem.
+4. **Normalization** performs a layer normalization, to ensure that the numbers are not off scale and are manageable.
+5. The data from this **ADD & NORM layer** is then fed to the feed forward layer. This is done by expanding the embedding to a higher dimension from 512 to 2048 to ensure to capture all the patterns and then contracted again.This can be represented as **(512 → 2048 → 512)**.
+6. The representation from Feed forward layer is then sent to the ADD & NORM layer once again and the final representation (**contextual representation**) is then available as the output from the Encoder.
+
+```
+- The Encoder stack isn't just one encoder — it's N encoders stacked
+        - Typically 6 in the original "Attention Is All You Need" paper
+- The output of one feeds into the next, progressively refining the representation.
+```
+
+---
+
+### Decoder Understanding:
+
+1. **The decoder** starts with the output embeddings (the words it has transformed so far). These are shifted one position to the right and the Positional encoding is then added to it.
+2. This data then goes into **Masked Multi-Head attention block**. The masking ensures that when the model is predicting the word i, it sees the words that came before it (positions less than i) so that it does not "cheat" by reading the rest of the sentence. (*explained above*)
+3. Just like the encoder, every sublayer in the decoder is immediately followed by an **Add & Layer Normalization** (*explained in the encoder stack*)
+4. **Encoder Decoder Attention layer** - this is where the encoder output is taken as input by the decoder.
+        - Queries (Q) = Come from the previous decoder layer
+        - Keys (K) and Values (V) metrices come from the Encoder output.
+        - This allows the decoder to attend to the entire sentence while it decides which word to write next.
+5. After this, the data flows to another **Add & Norm** and then to the **Position wise feed forward network** and then another **Add & Norm layer**.
+6. The decoder stack similar to encoder stack **happens 6 times** too and the final output coming out is passed through Linear transformation and the softmax function.
+        - The softmax produces a probability distribution over the entire vocabulary. The model then picks the word with the highest probability or uses additional           strategies if it needs to pick multiple options. 
+
+**Summary:** *The decoder uses what its written so far, masks the future, looks back at encoder's thinking to stay in the lane, processes it and uses the softmax ranking to pick the next word.*
+
+---
+
+### Layman Explanation of the Architecture
+
+***Scenario: Assume that you are the Senior Project manager and you have a task where a forecast for the backlog is asked for the upcoming quarter. Assume you have 8 leads reporting to you.***
+
+1. You assign the task to the 8 leads and tell them just that, "Need the forecast for backlog reduction by 9 AM ET today". That is all. No other inputs. (**Multi-head attention with 8 heads**)
+
+2. The leads start off by assigning roles and responsibilities of how they plan to do it and begin doing it and identify the data accordingly (**Each head learns unique Q, K, V matrices**)
+
+3. The forecast is ready by 9 AM ET (**Parallel forward pass**)
+
+4. You consolidate this into a final backlog forecast report (**Concatenation + linear transformation**)
+
+5. Post the submission of the forecast, the leads are told that the forecast seems off and non - achievable, They brainstorm to understand where they went wrong by referring a lot of past forecasts and methods used and refine the data and finish the final forecast again for submission. (**Training Loop**)
+
+6. Leads deliver the final forecast confidently & You submit the reviewed report to the leadership. (**Inference**)
+
