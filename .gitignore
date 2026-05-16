@@ -1,0 +1,24 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+build/
+
+# Env
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Ignore assignment folders
+01_Product_Recommender/
+03_Chatbot/
+
+# Ignore individual files
+Initial_Code.py
+package-lock.json
