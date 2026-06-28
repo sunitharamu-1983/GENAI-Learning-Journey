@@ -18,7 +18,7 @@
 ---
 
 ## Loop Engineering
-> **Link:** - https://www.mindstudio.ai/blog/what-is-loop-engineering-ai-coding-agents
-> **Arxiv Paper:** - chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://arxiv.org/pdf/2603.24768
+1. **Link:** - https://www.mindstudio.ai/blog/what-is-loop-engineering-ai-coding-agents
+2. **Arxiv Paper:** - chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://arxiv.org/pdf/2603.24768
 
 ---
